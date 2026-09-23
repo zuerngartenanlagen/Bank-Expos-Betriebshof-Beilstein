@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="de" class="h-full bg-slate-950 text-slate-900 scroll-smooth antialiased">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Investitions- & Strategiememorandum | Wohnhaus + Betriebshof Beilstein</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          screens: {
+            'xs': '420px',
+          },
+          fontFamily: {
+            sans: ['"Roboto"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            mono: ['"Roboto Mono"', 'monospace'],
+            num: ['"Space Grotesk"', '"Roboto Mono"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#070b14',
+            },
+            champagne: {
+              50: '#fbf9f4',
+              100: '#f5f0e3',
+              200: '#ebe0c7',
+              300: '#ddc9a1',
+              400: '#cbb07a',
+              500: '#b89657',
+              600: '#9d7c43',
+              700: '#7d6135',
+              800: '#654f2f',
+              900: '#55422a',
+            }
+          },
+          boxShadow: {
+            'soft': '0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -2px rgba(15, 23, 42, 0.03)',
+            'card': '0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 4px 10px -2px rgba(15, 23, 42, 0.03)',
+            'elevated': '0 20px 40px -15px rgba(15, 23, 42, 0.12), 0 0 1px 1px rgba(15, 23, 42, 0.05)',
+            'gold': '0 10px 25px -5px rgba(184, 150, 87, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    
+    .touch-scroll-x {
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+
+    .num-modern {
+      font-family: 'Space Grotesk', 'Roboto Mono', sans-serif;
+      font-feature-settings: "tnum" 1, "lnum" 1, "zero" 1;
+      font-variant-numeric: tabular-nums lining-nums slashed-zero;
+      letter-spacing: -0.025em;
+    }
+
+    .glass-header {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .badge-luxury {
+      background: linear-gradient(135deg, #fbf9f4 0%, #f5f0e3 100%);
+      border: 1px solid #ebe0c7;
+      color: #654f2f;
+    }
+
+    .badge-family {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border: 1px solid #f59e0b;
+      color: #78350f;
+    }
+
+    @media print {
+      .no-print { display: none !important; }
+      .page-tab-content { display: block !important; margin-bottom: 2.5rem; page-break-after: always; }
+      body { background: #ffffff !important; color: #000000 !important; font-size: 8.5pt; line-height: 1.35; }
+      .print-border { border: 1px solid #cbd5e1 !important; }
+      a { text-decoration: none !important; color: inherit !important; }
+      .shadow-soft, .shadow-card, .shadow-elevated, .shadow-gold { box-shadow: none !important; }
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col bg-[#f8fafc] text-slate-800 font-sans antialiased selection:bg-slate-900 selection:text-champagne-300">
+
+  <!-- ================================================================= -->
+  <!-- 1. DUAL-PASSWORT-SPERRBILDSCHIRM (OHNE PASSWORT-HINWEIS)          -->
+  <!-- ================================================================= -->
+  <div id="passwort-overlay" class="fixed inset-0 z-[99999] bg-slate-950 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div class="relative w-full max-w-md bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl text-center space-y-6">
+      
+      <div class="absolute -top-10 -right-10 w-36 h-36 bg-champagne-500/10 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="absolute -bottom-10 -left-10 w-36 h-36 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+      <div class="flex flex-col items-center space-y-3 relative z-10">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-850 text-champagne-400 flex items-center justify-center font-serif text-2xl font-bold border border-slate-800 shadow-card">
+          <span>Z</span>
+        </div>
+        <div class="space-y-1">
+          <span class="px-2.5 py-0.5 text-[9px] uppercase font-mono font-bold tracking-widest text-champagne-400 bg-champagne-950/80 border border-champagne-800/60 rounded-full inline-block">
+            Vertrauliches Dossier
+          </span>
+          <h2 class="text-lg sm:text-xl font-serif font-bold text-white tracking-tight mt-1">
+            Zugriff geschützt
+          </h2>
+          <p class="text-xs text-slate-400 max-w-xs mx-auto leading-relaxed">
+            Bitte autorisiertes Passwort eingeben, um die Finanzierungs- und Liegenschaftsdaten freizuschalten.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-3.5 text-left relative z-10">
+        <div>
+          <label for="passwort-input" class="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1.5 font-semibold">
+            Passwort
+          </label>
+          <input 
+            type="password" 
+            id="passwort-input" 
+            placeholder="Passwort eingeben..." 
+            autocomplete="current-password"
+            class="w-full px-4 py-3 bg-slate-950/90 border border-slate-700 text-white placeholder-slate-500 rounded-xl text-sm focus:outline-none focus:border-champagne-400 focus:ring-1 focus:ring-champagne-400 transition"
+          >
+        </div>
+
+        <button 
+          type="button"
+          onclick="pruefePasswort()" 
+          class="w-full py-3 px-4 bg-gradient-to-r from-champagne-500 to-champagne-600 hover:from-champagne-400 hover:to-champagne-500 text-slate-950 font-bold uppercase tracking-wider text-xs rounded-xl shadow-gold transition cursor-pointer"
+        >
+          Dossier freischalten
+        </button>
+
+        <p id="fehlermeldung" class="text-rose-400 text-xs text-center font-medium hidden">
+          ⚠ Ungültiges Passwort. Bitte überprüfen Sie Ihre Eingabe.
+        </p>
+      </div>
+
+      <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[10px] font-mono text-slate-500 relative z-10">
+        <span>Flurstück 529 • Beilstein</span>
+        <span class="text-slate-600">Dual-Access System</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 2. GESCHÜTZTER GESAMTINHALT                                       -->
+  <!-- ================================================================= -->
+  <div id="geschuetzter-inhalt" style="display: none;" class="min-h-full flex-col flex-grow w-full">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 glass-header border-b border-slate-200/80 shadow-soft no-print transition-all duration-300">
+    <div id="header-container" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300">
+      
+      <div class="flex items-center justify-between py-3 sm:py-3.5 border-b border-slate-100/80 gap-3">
+        <div class="flex items-center space-x-3 sm:space-x-4 min-w-0">
+          <div class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gradient-to-br from-slate-950 via-slate-900 to-slate-850 text-champagne-300 flex items-center justify-center font-serif text-xl sm:text-2xl font-bold tracking-tight border border-slate-800 shadow-card shrink-0">
+            <span class="relative z-10">Z</span>
+            <div class="absolute inset-0 rounded-lg bg-champagne-500/10 blur-[2px]"></div>
+          </div>
+          <div class="min-w-0">
+            <div class="flex items-center space-x-2 flex-wrap">
+              <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] font-mono font-bold text-slate-500">Memorandum</span>
+              <span id="access-mode-badge" class="px-2 py-0.5 text-[8px] sm:text-[9px] uppercase font-bold tracking-wider rounded badge-luxury shadow-2xs">
+                Bankakte • Kreditprüfung
+              </span>
+            </div>
+            <h1 class="text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-tight text-slate-950 font-serif truncate mt-0.5">
+              Wohnhaus + GaLaBau-Betriebshof Helfenberger Str. 28, Beilstein
+            </h1>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
+          <div class="hidden xl:flex flex-col text-right pr-2 border-r border-slate-200">
+            <span class="text-[11px] font-mono text-slate-700 font-semibold tracking-tight num-modern">Flurstück 529 • 6.300 m² Areal</span>
+            <span class="text-[10px] text-emerald-700 font-mono font-medium flex items-center justify-end space-x-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>420k Kaufpreis • 60k EK • 390k Kaufkredit (+250k Abrufsanierung)</span>
+            </span>
+          </div>
+
+          <button onclick="toggleWidescreenMode()" id="widescreen-toggle-btn" title="Auf maximale Bildschirmbreite erweitern" class="inline-flex items-center space-x-1.5 px-3 py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-wider bg-slate-100/90 hover:bg-slate-200 text-slate-800 border border-slate-300 shadow-2xs transition rounded-md cursor-pointer">
+            <svg id="widescreen-icon" class="w-3.5 h-3.5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+            </svg>
+            <span id="widescreen-btn-text" class="hidden md:inline">Vollbreite</span>
+          </button>
+
+          <button onclick="sperreDossier()" title="Ansicht sperren & abmelden" class="inline-flex items-center space-x-1.5 px-3 py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-wider bg-slate-100 hover:bg-rose-50 text-slate-700 hover:text-rose-700 border border-slate-300 hover:border-rose-300 shadow-2xs transition rounded-md cursor-pointer">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+            <span class="hidden sm:inline">Sperren</span>
+          </button>
+
+          <button onclick="window.print()" title="Gesamtes Dossier drucken" class="inline-flex items-center space-x-2 px-3.5 py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-wider bg-gradient-to-r from-slate-900 to-slate-850 text-white hover:from-slate-800 border border-slate-800 shadow-card transition rounded-md group cursor-pointer">
+            <svg class="w-3.5 h-3.5 text-champagne-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+            </svg>
+            <span class="hidden sm:inline">Drucken</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Nav -->
+      <nav class="py-2.5 flex lg:hidden overflow-x-auto touch-scroll-x space-x-2 no-scrollbar">
+        <button onclick="navigateToPage('page-overview')" id="mobile-nav-page-overview" class="mobile-nav-btn whitespace-nowrap px-3.5 py-1.5 rounded-md text-xs font-semibold bg-slate-900 text-white border border-slate-900 shadow-soft">
+          01 • Dossier
+        </button>
+        <button onclick="navigateToPage('page-kauf')" id="mobile-nav-page-kauf" class="mobile-nav-btn whitespace-nowrap px-3.5 py-1.5 rounded-md text-xs font-semibold bg-white text-slate-700 border border-slate-200">
+          02 • Struktur & Sanierung
+        </button>
+        <button onclick="navigateToPage('page-plaene')" id="mobile-nav-page-plaene" class="mobile-nav-btn whitespace-nowrap px-3.5 py-1.5 rounded-md text-xs font-semibold bg-white text-slate-700 border border-slate-200">
+          03 • Pläne (PDF)
+        </button>
+        <button onclick="navigateToPage('page-rechner')" id="mobile-nav-page-rechner" class="mobile-nav-btn whitespace-nowrap px-3.5 py-1.5 rounded-md text-xs font-semibold bg-white text-slate-700 border border-slate-200">
+          04 • Bankcheck & Cashflow
+        </button>
+        <button onclick="navigateToPage('page-schutz')" id="mobile-nav-page-schutz" class="mobile-nav-btn whitespace-nowrap px-3.5 py-1.5 rounded-md text-xs font-semibold bg-white text-slate-700 border border-slate-200">
+          05 • Verträge & Recht
+        </button>
+        <button onclick="navigateToPage('page-standort')" id="mobile-nav-page-standort" class="mobile-nav-btn whitespace-nowrap px-3.5 py-1.5 rounded-md text-xs font-semibold bg-white text-slate-700 border border-slate-200">
+          06 • Standort
+        </button>
+        <button onclick="navigateToPage('page-galerie')" id="mobile-nav-page-galerie" class="mobile-nav-btn whitespace-nowrap px-3.5 py-1.5 rounded-md text-xs font-semibold bg-white text-slate-700 border border-slate-200">
+          07 • Nachweise
+        </button>
+        <button onclick="navigateToPage('page-familie')" id="mobile-nav-page-familie" class="mobile-nav-btn family-only whitespace-nowrap px-3.5 py-1.5 rounded-md text-xs font-bold bg-amber-50 text-amber-950 border border-amber-300 hidden">
+          08 • Familie Zürn
+        </button>
+      </nav>
+
+      <!-- Desktop Nav Grid -->
+      <nav id="desktop-nav-grid" class="hidden lg:grid grid-cols-7 gap-2 py-2.5 text-left transition-all">
+        <button onclick="navigateToPage('page-overview')" id="nav-btn-page-overview" class="nav-tab group flex flex-col justify-center p-2.5 rounded-lg border border-slate-900 bg-slate-900 text-white transition shadow-soft">
+          <span class="nav-tab-badge text-[9px] font-mono uppercase font-bold text-champagne-400 tracking-wider">01 • Dossier</span>
+          <span class="nav-tab-title text-[11px] font-semibold leading-tight mt-0.5 truncate">Übersicht & Facts</span>
+        </button>
+
+        <button onclick="navigateToPage('page-kauf')" id="nav-btn-page-kauf" class="nav-tab group flex flex-col justify-center p-2.5 rounded-lg border border-slate-200 bg-white/80 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition shadow-2xs">
+          <span class="nav-tab-badge text-[9px] font-mono uppercase font-bold text-slate-400 tracking-wider">02 • Struktur</span>
+          <span class="nav-tab-title text-[11px] font-semibold leading-tight mt-0.5 truncate">Kauf, EK & Abrufsanierung</span>
+        </button>
+
+        <button onclick="navigateToPage('page-plaene')" id="nav-btn-page-plaene" class="nav-tab group flex flex-col justify-center p-2.5 rounded-lg border border-slate-200 bg-white/80 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition shadow-2xs">
+          <span class="nav-tab-badge text-[9px] font-mono uppercase font-bold text-slate-400 tracking-wider">03 • 1:1 Akten</span>
+          <span class="nav-tab-title text-[11px] font-semibold leading-tight mt-0.5 truncate">Original-PDFs</span>
+        </button>
+
+        <button onclick="navigateToPage('page-rechner')" id="nav-btn-page-rechner" class="nav-tab group flex flex-col justify-center p-2.5 rounded-lg border border-slate-200 bg-white/80 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition shadow-2xs">
+          <span class="nav-tab-badge text-[9px] font-mono uppercase font-bold text-slate-400 tracking-wider">04 • Bankcheck</span>
+          <span class="nav-tab-title text-[11px] font-semibold leading-tight mt-0.5 truncate">Kapitaldienst & EK</span>
+        </button>
+
+        <button onclick="navigateToPage('page-schutz')" id="nav-btn-page-schutz" class="nav-tab group flex flex-col justify-center p-2.5 rounded-lg border border-slate-200 bg-white/80 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition shadow-2xs">
+          <span class="nav-tab-badge text-[9px] font-mono uppercase font-bold text-slate-400 tracking-wider">05 • Verträge</span>
+          <span class="nav-tab-title text-[11px] font-semibold leading-tight mt-0.5 truncate">Vertragswerk & Recht</span>
+        </button>
+
+        <button onclick="navigateToPage('page-standort')" id="nav-btn-page-standort" class="nav-tab group flex flex-col justify-center p-2.5 rounded-lg border border-slate-200 bg-white/80 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition shadow-2xs">
+          <span class="nav-tab-badge text-[9px] font-mono uppercase font-bold text-slate-400 tracking-wider">06 • Geodaten</span>
+          <span class="nav-tab-title text-[11px] font-semibold leading-tight mt-0.5 truncate">Standort & Maps</span>
+        </button>
+
+        <button onclick="navigateToPage('page-galerie')" id="nav-btn-page-galerie" class="nav-tab group flex flex-col justify-center p-2.5 rounded-lg border border-slate-200 bg-white/80 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition shadow-2xs">
+          <span class="nav-tab-badge text-[9px] font-mono uppercase font-bold text-slate-400 tracking-wider">07 • Nachweise</span>
+          <span class="nav-tab-title text-[11px] font-semibold leading-tight mt-0.5 truncate">Fotos & Urkunden</span>
+        </button>
+
+        <button onclick="navigateToPage('page-familie')" id="nav-btn-page-familie" class="nav-tab family-only group flex-col justify-center p-2.5 rounded-lg border border-amber-300/80 bg-amber-50/70 text-slate-800 hover:border-amber-400 hover:bg-amber-100/60 transition shadow-2xs hidden">
+          <span class="nav-tab-badge text-[9px] font-mono uppercase font-bold text-amber-800 tracking-wider">08 • Familie Zürn</span>
+          <span class="nav-tab-title text-[11px] font-semibold leading-tight mt-0.5 truncate text-slate-900">GbR-Masterplan</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-container" class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-9 lg:py-12 transition-all duration-300">
+
+    <!-- FAMILIEN-BANNER (NUR IM FAMILIENMODUS SICHTBAR) -->
+    <div id="family-mode-banner" class="family-only hidden mb-6 sm:mb-8 bg-gradient-to-r from-slate-900 via-slate-850 to-slate-900 text-white p-4 sm:p-5 rounded-xl sm:rounded-2xl shadow-elevated border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div class="space-y-1.5 min-w-0">
+        <div class="flex items-center space-x-2.5 flex-wrap">
+          <span class="px-2.5 py-0.5 text-[9px] uppercase font-mono font-bold tracking-wider bg-champagne-400 text-slate-950 rounded shadow-2xs">
+            Familien-Masterplan aktiv
+          </span>
+          <span class="text-xs font-serif font-bold text-slate-200">Norbert, Marcel &amp; Vanessa Zürn</span>
+        </div>
+        <p class="text-xs text-slate-300 max-w-3xl leading-relaxed">
+          Chronologischer Familien-Fahrplan: 1. Kauf &amp; 250k-Abrufsanierung (getragen durch Norbert), Gewerbemiete Marcel (2.438 € mtl.) • 2. Vorab-Gründung der GbR (Marcel &amp; Vanessa 50/50, 0 € Bankhaftung Vanessa) • 3. Notarielle Schenkung nach Sanierung mit befreiender Schuldübernahme &amp; Wohnrecht (§ 1093 BGB) • 4. Automatisierte Fremdtilgung &amp; 0 € Schenkungsteuer.
+        </p>
+      </div>
+      <button onclick="navigateToPage('page-familie')" class="inline-flex items-center space-x-1.5 px-4 py-2 text-xs font-bold uppercase tracking-wider bg-champagne-500 hover:bg-champagne-400 text-slate-950 rounded-lg shrink-0 shadow-gold transition cursor-pointer">
+        <span>Zur Familienstrategie</span>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- SEITE 1: ÜBERSICHT & EXECUTIVE SUMMARY                            -->
+    <!-- ================================================================= -->
+    <div id="page-overview" class="page-tab-content space-y-6 sm:space-y-8 block">
+      <div class="relative overflow-hidden bg-white border border-slate-200/90 p-5 sm:p-8 lg:p-10 shadow-card rounded-xl sm:rounded-2xl">
+        <div class="absolute top-0 right-0 -mt-8 -mr-8 w-72 h-72 rounded-full bg-champagne-200/30 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -mb-8 -ml-8 w-72 h-72 rounded-full bg-slate-200/40 blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 pb-8 border-b border-slate-200/80">
+          <div class="space-y-3">
+            <div class="flex items-center space-x-2 flex-wrap">
+              <span class="px-2.5 py-1 text-[10px] sm:text-xs uppercase tracking-widest font-mono font-bold bg-slate-900 text-champagne-300 rounded-md shadow-2xs">
+                Kreditdossier zur Darlehensbeantragung
+              </span>
+              <span class="text-slate-300 hidden sm:inline">•</span>
+              <span class="text-xs font-mono text-slate-500 font-medium">Stichtag: September 2026 • 10-Jahres-Horizont</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-serif font-bold tracking-tight text-slate-950 leading-tight">
+              Erwerb Wohnhaus + Betriebshof Helfenberger Straße 28
+            </h2>
+            <p class="text-slate-600 max-w-3xl text-xs sm:text-sm md:text-base leading-relaxed">
+              Strukturierter Immobilienerwerb der Gesamtliegenschaft (Wohnhaus + GaLaBau-Betriebshof auf Flurstück 529 mit 6.300 m² Gesamtareal) durch den privaten Alleininvestor <strong>Norbert Zürn</strong>. Reiner Kaufpreis: <strong class="num-modern text-slate-900 font-semibold">420.000 €</strong> zzgl. Erwerbsnebenkosten von ca. <span class="num-modern font-semibold text-slate-800">29.400 €</span>. Norbert Zürn bringt ein substanzielles <strong>Bargeld-Eigenkapital von 60.000 €</strong> ein. Der tatsächliche Fremdfinanzierungsbedarf für den Kauf beläuft sich auf schlanke <strong class="num-modern text-slate-900 font-bold">390.000 €</strong> (Beleihungsauslauf LTV nur 92,9 % des Kaufpreises).
+            </p>
+            <p class="text-slate-600 max-w-3xl text-xs sm:text-sm md:text-base leading-relaxed">
+              <strong>Kapitaldienstdeckung Kauf & Cashflow:</strong> Der 10-jährige Gewerbemietvertrag mit dem Fachbetrieb von <strong>Marcel Zürn (Einzelunternehmen)</strong> sichert eine monatliche Gewerbekaltmiete von <strong class="num-modern text-slate-900 font-semibold">2.438 €</strong> mtl. (<strong class="num-modern text-slate-900 font-semibold">29.250 €</strong> p.a.). Da die Bankrate für das 390.000 €-Kaufpreisdarlehen bei <strong class="num-modern text-slate-900 font-semibold">2.113 €</strong> mtl. liegt, erzielt Norbert Zürn neben der vollständigen Fremdtilgung des Kaufpreises (<span class="num-modern font-semibold">0,00 €</span> laufender Eigenaufwand beim Kauf) einen monatlichen Cashflow-Überschuss von <strong class="num-modern text-emerald-800 font-bold">+325 €</strong> mtl. (<strong class="num-modern text-emerald-800 font-bold">+3.900 €</strong> p.a.) als laufende Verzinsung seines Eigenkapitals.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3.5 min-w-full lg:min-w-[320px]">
+            <div class="bg-gradient-to-br from-slate-50 to-slate-100/70 border border-slate-200 p-4 text-left lg:text-right rounded-xl shadow-2xs">
+              <span class="block text-[10px] sm:text-[11px] uppercase tracking-wider text-slate-500 font-semibold font-mono">Bankdarlehen Kauf (Netto)</span>
+              <span class="text-2xl sm:text-3xl lg:text-4xl font-bold num-modern text-slate-950 block mt-1 tracking-tight">390.000 €</span>
+              <span class="text-[11px] text-slate-500 block mt-1">450.000 € Gesamtaufwand ./. <span class="num-modern font-bold text-slate-900">60.000 € Bar-EK</span></span>
+            </div>
+            <div class="bg-gradient-to-br from-champagne-50/90 to-amber-50/60 border border-champagne-200/90 p-4 text-left lg:text-right rounded-xl shadow-2xs">
+              <span class="block text-[10px] sm:text-[11px] uppercase tracking-wider text-champagne-800 font-semibold font-mono">Gewerbekaltmiete Marcel</span>
+              <span class="text-2xl sm:text-3xl lg:text-4xl font-bold num-modern text-slate-950 block mt-1 tracking-tight">29.250 € p.a.</span>
+              <span class="text-[11px] text-emerald-800 font-semibold block mt-1 font-mono num-modern">2.438 € mtl. (115,4 % Deckung der Kauf-Rate)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-5 pt-8">
+          <div class="bg-slate-50/60 border border-slate-200/80 p-4 rounded-xl space-y-1">
+            <span class="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-slate-500 font-mono block">Eigenkapital Norbert Zürn</span>
+            <span class="text-base sm:text-lg font-bold text-slate-950 block font-serif num-modern">60.000 € (<span class="font-semibold">13,3 %</span>)</span>
+            <span class="text-[11px] text-slate-500 block leading-tight">Deckt Nebenkosten + tilgt Kaufpreis bar</span>
+          </div>
+          <div class="bg-amber-50/40 border border-amber-200/70 p-4 rounded-xl space-y-1">
+            <span class="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-amber-900 font-mono block">Abrufsanierung (Tranche)</span>
+            <span class="text-base sm:text-lg font-bold text-slate-950 block font-serif"><span class="num-modern font-semibold">250.000 €</span> Abruflinie</span>
+            <span class="text-[11px] text-slate-500 block leading-tight">Kapitaldienst getragen durch Norbert Zürn</span>
+          </div>
+          <div class="bg-emerald-50/40 border border-emerald-200/70 p-4 rounded-xl space-y-1">
+            <span class="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-emerald-800 font-mono block">Deckungsgrad Kauf (DSCR)</span>
+            <span class="text-base sm:text-lg font-bold text-slate-950 block font-serif num-modern"><span class="font-semibold">115,4 %</span> Deckung</span>
+            <span class="text-[11px] text-emerald-700 block leading-tight font-mono num-modern">+325 € mtl. Cash-Überschuss</span>
+          </div>
+          <div class="bg-slate-50/60 border border-slate-200/80 p-4 rounded-xl space-y-1">
+            <span class="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-slate-700 font-mono block">Haftungsschutz Investor</span>
+            <span class="text-base sm:text-lg font-bold text-slate-950 block font-serif"><span class="num-modern font-semibold">0 €</span> Bürgschaft</span>
+            <span class="text-[11px] text-slate-500 block leading-tight">Keine Haftung für Firmenverbindlichkeiten</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Säulen -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+        <div class="bg-white border border-slate-200/90 p-6 sm:p-7 space-y-4 shadow-card rounded-xl hover:border-slate-300 transition">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <span class="text-[10px] sm:text-xs uppercase tracking-wider font-mono font-bold text-slate-400">01 / INVESTOR</span>
+            <span class="w-2.5 h-2.5 bg-slate-900 rounded-full shadow-2xs"></span>
+          </div>
+          <h3 class="text-base sm:text-lg font-bold text-slate-950 uppercase tracking-tight font-serif">Norbert Zürn als Alleininvestor</h3>
+          <p class="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+            Norbert Zürn erwirbt die Liegenschaft zu 100 % als alleiniger Eigentümer im Grundbuch. Durch Einbringung von 60.000 € eigenem Barvermögen wird die Bonität optimal gesichert. Die Bankrate des Kaufpreises wird über den Gewerbemietvertrag fremdgetilgt.
+          </p>
+          <ul class="text-xs text-slate-700 space-y-2.5 border-t border-slate-100 pt-4">
+            <li class="flex items-start space-x-2.5">
+              <span class="text-amber-600 font-bold shrink-0">✓</span>
+              <span>Ausschließliche grundbuchliche Verfügungsgewalt (Abt. I)</span>
+            </li>
+            <li class="flex items-start space-x-2.5">
+              <span class="text-amber-600 font-bold shrink-0">✓</span>
+              <span>Strikt separates Vermieterkonto (kein Gemeinschaftskonto)</span>
+            </li>
+            <li class="flex items-start space-x-2.5">
+              <span class="text-amber-600 font-bold shrink-0">✓</span>
+              <span>Schutz des privaten Bestandsvermögens & echtes Ringfencing</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white border border-slate-200/90 p-6 sm:p-7 space-y-4 shadow-card rounded-xl hover:border-slate-300 transition">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <span class="text-[10px] sm:text-xs uppercase tracking-wider font-mono font-bold text-slate-400">02 / HAUPTMIETER</span>
+            <span class="w-2.5 h-2.5 bg-amber-600 rounded-full shadow-2xs"></span>
+          </div>
+          <h3 class="text-base sm:text-lg font-bold text-slate-950 uppercase tracking-tight font-serif">GaLaBau-Betrieb (Marcel Zürn)</h3>
+          <p class="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+            Der GaLaBau-Fachbetrieb von Marcel Zürn (Einzelunternehmen) mietet die Hallen- und Freiflächen für 10 Jahre fest an. Die monatliche Kaltmiete von 2.438 € (29.250 € p.a.) bedient die Kaufpreisrate vollumfänglich und refinanziert das eingesetzte Eigenkapital.
+          </p>
+          <ul class="text-xs text-slate-700 space-y-2.5 border-t border-slate-100 pt-4">
+            <li class="flex items-start space-x-2.5">
+              <span class="text-emerald-700 font-bold shrink-0">✓</span>
+              <span>Gewerbenutzung im Außenbereich (§ 35 BauGB) mit sehr hoher Wahrscheinlichkeit genehmigungsfähig</span>
+            </li>
+            <li class="flex items-start space-x-2.5">
+              <span class="text-emerald-700 font-bold shrink-0">✓</span>
+              <span>GVV befürwortet & unterstützt das Vorhaben ausdrücklich</span>
+            </li>
+            <li class="flex items-start space-x-2.5">
+              <span class="text-emerald-700 font-bold shrink-0">✓</span>
+              <span>Stabile Firmenliquidität ohne überfordernde Mietspitzen</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white border border-slate-200/90 p-6 sm:p-7 space-y-4 shadow-card rounded-xl hover:border-slate-300 transition">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <span class="text-[10px] sm:text-xs uppercase tracking-wider font-mono font-bold text-slate-400">03 / SANIERUNG & WOHNEN</span>
+            <span class="w-2.5 h-2.5 bg-emerald-600 rounded-full shadow-2xs"></span>
+          </div>
+          <h3 class="text-base sm:text-lg font-bold text-slate-950 uppercase tracking-tight font-serif">Abrufsanierung & Wohnnutzung Norbert</h3>
+          <p class="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+            Die 250.000 € Sanierungskosten werden als bankübliche Abruflinie strukturiert. Norbert Zürn bezieht das Wohnhaus nach Sanierung selbst. Er spart seine bisherige Fremdmiete vollständig ein und bedient den Kapitaldienst des Sanierungskredits eigenständig als Eigentümer.
+          </p>
+          <ul class="text-xs text-slate-700 space-y-2.5 border-t border-slate-100 pt-4">
+            <li class="flex items-start space-x-2.5">
+              <span class="text-emerald-700 font-bold shrink-0">✓</span>
+              <span><strong>Flexibler Abruf:</strong> Zinsen/Tilgung fallen nur auf tatsächlich verbaute Tranchen an</span>
+            </li>
+            <li class="flex items-start space-x-2.5">
+              <span class="text-emerald-700 font-bold shrink-0">✓</span>
+              <span><strong>Tragung durch Norbert Zürn:</strong> Sanierungskapitaldienst wird durch Norbert aus eigener Liquidität/Mietersparnis bedient</span>
+            </li>
+            <li class="flex items-start space-x-2.5">
+              <span class="text-emerald-700 font-bold shrink-0">✓</span>
+              <span><strong>Kostenvorteil:</strong> Kostensenkende Eigenleistungen durch GaLaBau-Gerätetechnik</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-between items-center bg-white border border-slate-200/90 p-4 sm:p-5 rounded-xl gap-3 text-center sm:text-left shadow-soft">
+        <span class="text-xs font-mono text-slate-500">Nächste Kategorie prüfen:</span>
+        <button onclick="navigateToPage('page-kauf')" class="w-full sm:w-auto inline-flex justify-center items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-950 hover:text-champagne-600 py-2 sm:py-0 transition">
+          <span>Weiter zu 2. Kauf, Eigenkapital & Abrufsanierung</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- SEITE 2: KAUF- & SANIERUNGSKONZEPT                                -->
+    <!-- ================================================================= -->
+    <div id="page-kauf" class="page-tab-content space-y-6 sm:space-y-8 hidden">
+      <div class="bg-white border border-slate-200/90 p-5 sm:p-8 lg:p-10 shadow-card rounded-xl sm:rounded-2xl space-y-8">
+        <div class="border-b border-slate-200 pb-5">
+          <div class="flex items-center space-x-2">
+            <span class="px-2.5 py-0.5 text-[10px] font-mono uppercase bg-slate-900 text-champagne-300 font-bold rounded">Kategorie 02</span>
+            <span class="text-xs font-mono text-slate-500">Kaufkonzept, Eigenkapital & 250.000 € Abrufsanierung</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-950 mt-1.5">
+            Kaufkonzept, Abrufsanierung & klare Lastenteilung
+          </h2>
+          <p class="text-slate-600 text-xs sm:text-sm mt-1 max-w-3xl">
+            Aufstellung der Gesamterwerbskosten, Einbringung von 60.000 € Bar-Eigenkapital durch Norbert Zürn, reduzierter Kaufpreiskredit (390.000 €) und die Strukturierung der 250.000 € Sanierung als bedarfsgerechter Abrufkredit.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-sm">
+          <div class="border border-slate-200 p-6 space-y-4 bg-slate-50/60 rounded-xl">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <h3 class="text-sm sm:text-base font-bold text-slate-950 uppercase tracking-tight font-serif">1. Der Erwerb (Kaufpreis-Tranche)</h3>
+              <span class="px-2.5 py-1 text-[11px] font-mono font-bold bg-slate-900 text-white rounded-md">100 % Norbert Zürn</span>
+            </div>
+            <p class="text-slate-700 leading-relaxed text-xs sm:text-sm">
+              Norbert Zürn erwirbt das Anwesen Helfenberger Str. 28 zu einem reinen Kaufpreis von <strong>420.000 €</strong>. Durch sein <strong>Eigenkapital in Höhe von 60.000 €</strong> werden die Nebenkosten vollständig beglichen und der Kaufpreis um ca. 30.600 € abgetragen. Der Nettodarlehensbedarf für den Erwerb beträgt <strong>390.000 €</strong>.
+            </p>
+            
+            <div class="border border-slate-200 rounded-lg overflow-hidden bg-white shadow-2xs">
+              <table class="w-full text-xs">
+                <tbody class="divide-y divide-slate-100 font-mono">
+                  <tr class="hover:bg-slate-50/50">
+                    <td class="p-3 text-slate-600">Reiner Kaufpreis Liegenschaft</td>
+                    <td class="p-3 text-right font-bold text-slate-950">420.000,00 €</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50/50">
+                    <td class="p-3 text-slate-600">Grunderwerbsteuer BW (5,0 %)</td>
+                    <td class="p-3 text-right font-semibold text-slate-700">21.000,00 €</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50/50">
+                    <td class="p-3 text-slate-600">Notar &amp; Grundbuchamt (ca. 2,0 %)</td>
+                    <td class="p-3 text-right font-semibold text-slate-700">ca. 8.400,00 €</td>
+                  </tr>
+                  <tr class="bg-slate-100/80 font-bold">
+                    <td class="p-3 text-slate-900 font-sans">Gesamterwerbsaufwand Liegenschaft</td>
+                    <td class="p-3 text-right text-slate-950">ca. 449.400,00 €</td>
+                  </tr>
+                  <tr class="bg-emerald-50/60 font-bold">
+                    <td class="p-3 text-emerald-950 font-sans">./. Eigenkapital Norbert Zürn (Barmittel)</td>
+                    <td class="p-3 text-right text-emerald-800">- 60.000,00 €</td>
+                  </tr>
+                  <tr class="bg-slate-900 text-white font-bold">
+                    <td class="p-3 font-sans">= Kaufpreiskredit Bank (Netto)</td>
+                    <td class="p-3 text-right text-champagne-300 font-mono text-sm">390.000,00 €</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="border border-slate-200 p-6 space-y-4 bg-slate-50/60 rounded-xl">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <h3 class="text-sm sm:text-base font-bold text-slate-950 uppercase tracking-tight font-serif">2. Sanierungsdarlehen (Abrufkredit 250k)</h3>
+              <span class="px-2.5 py-1 text-[11px] font-mono font-bold bg-amber-100 text-amber-900 border border-amber-300 rounded-md">Flexible Abruflinie</span>
+            </div>
+            <p class="text-slate-700 leading-relaxed text-xs sm:text-sm">
+              Für die Modernisierung und energetische Sanierung wird ein <strong>Abrufdarlehen von 250.000 €</strong> vereinbart. Zinsen und Tilgung fallen ausschließlich auf die tatsächlich abgerufenen Beträge nach Baufortschritt an. Den Kapitaldienst hierfür trägt Norbert Zürn eigenständig.
+            </p>
+
+            <div class="border border-slate-200 rounded-lg overflow-hidden bg-white shadow-2xs">
+              <table class="w-full text-xs">
+                <tbody class="divide-y divide-slate-100 font-mono">
+                  <tr class="hover:bg-slate-50/50">
+                    <td class="p-3 text-slate-600">Maximaler Sanierungsrahmen</td>
+                    <td class="p-3 text-right font-bold text-slate-950">250.000,00 €</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50/50">
+                    <td class="p-3 text-slate-600">Darlehensart</td>
+                    <td class="p-3 text-right font-bold text-amber-900">Abrufkonto (Tranchen nach Baufortschritt)</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50/50">
+                    <td class="p-3 text-slate-600">Rate Kaufpreiskredit (390k)</td>
+                    <td class="p-3 text-right font-bold text-slate-800">2.113,00 € mtl.</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50/50">
+                    <td class="p-3 text-slate-600">Deckung durch Marcels Gewerbemiete</td>
+                    <td class="p-3 text-right font-bold text-emerald-800">2.438,00 € mtl. (+325 € Überschuss)</td>
+                  </tr>
+                  <tr class="bg-amber-50/60 font-bold">
+                    <td class="p-3 text-amber-950 font-sans">Kapitaldienst Sanierung (nach Abruf)</td>
+                    <td class="p-3 text-right text-amber-900">Getragen durch Norbert Zürn</td>
+                  </tr>
+                  <tr class="bg-slate-900 text-white font-bold">
+                    <td class="p-3 font-sans">= Status Kapitaldienst Kaufpreiskredit</td>
+                    <td class="p-3 text-right text-champagne-300 font-mono text-sm">115,4 % bankenkonform gedeckt</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Klare Lastenteilung im laufenden Betrieb -->
+        <div class="border border-slate-200 p-5 sm:p-7 space-y-4 bg-white rounded-xl shadow-soft">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 font-serif">Strukturierte Kapitaldienst-Aufteilung im laufenden Betrieb</h3>
+              <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Trennscharfe Zuordnung: Kaufpreis-Fremdtilgung vs. Sanierungsabruf des Eigentümers</p>
+            </div>
+            <span class="text-[10px] sm:text-xs font-mono text-slate-700 bg-slate-100 px-3 py-1 rounded-md border border-slate-200 self-start sm:self-auto">Klare Zuständigkeiten</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+              <strong class="text-slate-950 font-serif block text-xs sm:text-sm">Säule 1: Marcel Zürn (Gewerbemiete Betriebshof)</strong>
+              <p class="text-slate-600 leading-relaxed text-[11px]">
+                Marcel Zürn zahlt als Mieter über sein GaLaBau-Einzelunternehmen eine feste Kaltmiete von <strong>2.438 € mtl.</strong> (29.250 € p.a.) für die Hallen, Werkstätten und befestigten Hofflächen. Dieser Betrag bedient die Bankrate des 390.000 € Kaufpreiskredits (2.113 € mtl.) zu <strong>115,4 %</strong> und belässt monatlich +325 € Liquiditätspuffer auf Norberts Vermieterkonto. Marcels Firmenliquidität wird verlässlich geschont. Bei wachsendem Betriebsumsatz kann die Miete flexibel auf bis zu 2.800 € mtl. angepasst werden.
+              </p>
+            </div>
+
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+              <strong class="text-slate-950 font-serif block text-xs sm:text-sm">Säule 2: Norbert Zürn (Kapitaldienst Abrufsanierung & Wohnen)</strong>
+              <p class="text-slate-600 leading-relaxed text-[11px]">
+                Norbert Zürn zieht nach Sanierung selbst in das Wohnhaus ein und spart seine bisherige private Kaltmiete an Dritte vollständig ein. <strong>Den Kapitaldienst für die 250.000 € Abrufsanierung trägt Norbert Zürn eigenständig als Eigentümer</strong>. Da Zinsen und Tilgung nur auf tatsächlich abgerufene Handwerker- und Materialrechnungen anfallen, wächst die Belastung schrittweise und wird durch Norberts laufende private Einkünfte sowie seine eingesparte Fremdmiete solide finanziert.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-between items-center bg-white border border-slate-200/90 p-4 rounded-xl gap-3 shadow-soft">
+        <button onclick="navigateToPage('page-overview')" class="w-full sm:w-auto inline-flex justify-center items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-slate-950">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          <span>Zurück zu 1. Übersicht</span>
+        </button>
+        <button onclick="navigateToPage('page-plaene')" class="w-full sm:w-auto inline-flex justify-center items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-950 hover:text-champagne-600">
+          <span>Weiter zu 3. Amtliche Original-PDFs (1:1)</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- SEITE 3: ORIGINAL-PDFS                                            -->
+    <!-- ================================================================= -->
+    <div id="page-plaene" class="page-tab-content space-y-6 sm:space-y-8 hidden">
+      <div class="bg-white border border-slate-200/90 p-5 sm:p-8 lg:p-10 shadow-card rounded-xl sm:rounded-2xl space-y-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-slate-200 pb-5 gap-4">
+          <div>
+            <div class="flex items-center space-x-2 flex-wrap">
+              <span class="px-2.5 py-0.5 text-[10px] font-mono uppercase bg-slate-900 text-champagne-300 font-bold rounded">Kategorie 03</span>
+              <span class="px-2.5 py-0.5 text-[10px] uppercase font-bold bg-emerald-100 text-emerald-900 border border-emerald-300 rounded">1:1 Planakten</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-950 mt-1.5">Amtliche Bauvoranfrage & Lagepläne (Original-PDF)</h2>
+            <p class="text-slate-600 text-xs sm:text-sm mt-1">
+              Voranfrage Nutzungsänderung Marcel Zürn • Flurstück 529 • Stand: September 2026
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-[11px] sm:text-xs font-mono bg-emerald-50 border border-emerald-300 px-3.5 py-1.5 font-bold text-emerald-900 rounded-lg shadow-2xs">
+              Außenbereich (§ 35 BauGB) • GVV befürwortet Vorhaben
+            </span>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-700 font-mono">
+              Wählen Sie eine der 5 Original-PDF-Dateien:
+            </div>
+            <label class="cursor-pointer inline-flex items-center space-x-1.5 text-[11px] font-mono font-bold text-slate-700 hover:text-slate-950 bg-slate-100 hover:bg-slate-200 px-3 py-1 rounded-md border border-slate-300 transition">
+              <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+              </svg>
+              <span>PDFs vom PC verknüpfen</span>
+              <input type="file" id="pdf-batch-input" accept="application/pdf" multiple class="hidden" onchange="handleLocalPdfSelection(event)">
+            </label>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2.5">
+            <button onclick="selectOfficialDocument(0)" id="pdf-tab-0" class="pdf-tab-btn text-left p-3 sm:p-3.5 border-2 border-slate-900 bg-slate-900 text-white rounded-lg transition shadow-soft">
+              <span class="text-[10px] font-mono text-champagne-400 block uppercase font-bold">Dok 1 • M 1:250</span>
+              <span class="text-xs font-bold block mt-0.5 truncate">01_250_Lageplan Bestand</span>
+              <span class="text-[10px] text-slate-300 block mt-0.5">Bestand M 1:250</span>
+            </button>
+
+            <button onclick="selectOfficialDocument(1)" id="pdf-tab-1" class="pdf-tab-btn text-left p-3 sm:p-3.5 border border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-900 rounded-lg transition">
+              <span class="text-[10px] font-mono text-slate-500 block uppercase font-bold">Dok 2 • M 1:500</span>
+              <span class="text-xs font-bold block mt-0.5 truncate">01_500_Lageplan Bestand</span>
+              <span class="text-[10px] text-slate-500 block mt-0.5">Katasterüberblick</span>
+            </button>
+
+            <button onclick="selectOfficialDocument(2)" id="pdf-tab-2" class="pdf-tab-btn text-left p-3 sm:p-3.5 border border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-900 rounded-lg transition">
+              <span class="text-[10px] font-mono text-slate-500 block uppercase font-bold">Dok 3 • M 1:500</span>
+              <span class="text-xs font-bold block mt-0.5 truncate">02_500_Bestand +Luftbild</span>
+              <span class="text-[10px] text-slate-500 block mt-0.5">Flst. 529 Luftbild</span>
+            </button>
+
+            <button onclick="selectOfficialDocument(3)" id="pdf-tab-3" class="pdf-tab-btn text-left p-3 sm:p-3.5 border border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-900 rounded-lg transition">
+              <span class="text-[10px] font-mono text-slate-500 block uppercase font-bold">Dok 4 • M 1:250</span>
+              <span class="text-xs font-bold block mt-0.5 truncate">03_250_Umbau kurzfristig</span>
+              <span class="text-[10px] text-slate-500 block mt-0.5">Halle 270m² / Werkstatt</span>
+            </button>
+
+            <button onclick="selectOfficialDocument(4)" id="pdf-tab-4" class="pdf-tab-btn text-left p-3 sm:p-3.5 border border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-900 rounded-lg transition">
+              <span class="text-[10px] font-mono text-slate-500 block uppercase font-bold">Dok 5 • M 1:250</span>
+              <span class="text-xs font-bold block mt-0.5 truncate">04_250_Umbau langfristig</span>
+              <span class="text-[10px] text-slate-500 block mt-0.5">Erweiterung Halle 235m²</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 sm:p-4 bg-slate-900 text-white rounded-xl text-xs gap-3 shadow-soft">
+          <div class="flex items-center space-x-2.5 truncate">
+            <span class="px-2.5 py-0.5 bg-champagne-400 text-slate-950 font-mono font-bold rounded text-[10px] uppercase shrink-0">Google Drive Live-PDF</span>
+            <span id="current-doc-filename" class="font-mono text-slate-100 font-semibold truncate">2026-08-24_01_250_Lageplan Bestand.pdf</span>
+          </div>
+          <div class="flex items-center space-x-2 shrink-0">
+            <a id="current-doc-drive-link" href="https://drive.google.com/file/d/1Hq58Q6ZugzSepMvBm6PywC-ijkDQH9fk/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 px-3.5 py-1.5 font-bold uppercase rounded-md bg-white text-slate-900 hover:bg-slate-100 shadow-2xs transition">
+              <span>In Google Drive öffnen ↗</span>
+            </a>
+            <a id="current-doc-download-link" href="https://drive.google.com/uc?export=download&id=1Hq58Q6ZugzSepMvBm6PywC-ijkDQH9fk" target="_blank" class="inline-flex items-center space-x-1.5 px-3.5 py-1.5 font-bold uppercase rounded-md bg-slate-800 text-slate-200 border border-slate-700 hover:bg-slate-700 hover:text-white transition">
+              <span>Download</span>
+            </a>
+          </div>
+        </div>
+
+        <div id="pdf-viewer-container" class="border border-slate-300 rounded-xl bg-slate-100 shadow-inner flex flex-col h-[55vh] sm:h-[65vh] lg:h-[72vh] min-h-[420px] overflow-hidden">
+          <div class="bg-white border-b border-slate-200 px-4 py-2.5 flex flex-wrap items-center justify-between text-xs gap-2">
+            <div class="flex items-center space-x-2">
+              <span id="pdf-render-status" class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span id="pdf-title-display" class="font-bold text-slate-900 font-serif">Lageplan aktueller Bestand (M 1:250)</span>
+            </div>
+            <div class="flex items-center space-x-3 text-[11px] font-mono text-slate-600">
+              <span id="pdf-scale-tag" class="bg-slate-100 px-2.5 py-0.5 rounded border border-slate-200">Maßstab: M 1:250</span>
+              <span class="text-slate-400">•</span>
+              <span>Online synchronisiert via Google Drive</span>
+            </div>
+          </div>
+
+          <div id="pdf-embed-slot" class="flex-grow w-full relative bg-slate-200/50 p-1">
+            <iframe 
+              id="google-drive-pdf-frame"
+              src="https://drive.google.com/file/d/1Hq58Q6ZugzSepMvBm6PywC-ijkDQH9fk/preview" 
+              class="w-full h-full rounded-lg bg-white shadow-2xs border border-slate-200"
+              allow="autoplay">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-between items-center bg-white border border-slate-200/90 p-4 rounded-xl gap-3 shadow-soft">
+        <button onclick="navigateToPage('page-kauf')" class="w-full sm:w-auto inline-flex justify-center items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-slate-950">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          <span>Zurück zu 2. Kauf & Abrufsanierung</span>
+        </button>
+        <button onclick="navigateToPage('page-rechner')" class="w-full sm:w-auto inline-flex justify-center items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-950 hover:text-champagne-600">
+          <span>Weiter zu 4. Kapitaldienst & Sensitivität</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- SEITE 4: KAPITALDIENST & SENSITIVITÄT                             -->
+    <!-- ================================================================= -->
+    <div id="page-rechner" class="page-tab-content space-y-6 sm:space-y-8 hidden">
+      <div class="bg-white border border-slate-200/90 p-5 sm:p-8 lg:p-10 shadow-card rounded-xl sm:rounded-2xl space-y-6">
+        <div class="border-b border-slate-200 pb-5">
+          <div class="flex items-center space-x-2">
+            <span class="px-2.5 py-0.5 text-[10px] font-mono uppercase bg-slate-900 text-champagne-300 font-bold rounded">Kategorie 04</span>
+            <span class="text-xs font-mono text-slate-500">Kreditberechnung, EK-Rendite & DSCR-Prüfung</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-950 mt-1.5">Kapitaldienstberechnung & Sensitivitätsanalyse</h2>
+          <p class="text-slate-600 text-xs sm:text-sm mt-1">
+            Bankenkonforme Kreditberechnung auf Basis des <strong>390.000-€-Kaufpreiskredits</strong> (nach 60.000 € EK) bei einer Gewerbekaltmiete von <strong>2.438 € mtl. (29.250 € p.a.)</strong>.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 border border-slate-200 p-4 sm:p-6 bg-slate-50/50 rounded-xl" id="calculator-controls-box">
+          <div class="lg:col-span-5 space-y-4 bg-white p-5 border border-slate-200 rounded-xl shadow-soft">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2.5">
+              <h3 class="text-xs uppercase tracking-wider font-bold text-slate-900 font-serif">
+                Finanzierungsparameter
+              </h3>
+              <button onclick="resetToDefaultCalculatorValues()" title="Auf Standardwerte zurücksetzen" class="text-[10px] font-mono text-slate-500 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 px-2 py-0.5 rounded border border-slate-300 transition cursor-pointer">
+                ↺ Reset
+              </button>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5">
+                <span class="text-slate-700">Bankdarlehen Kauf (nach 60k EK):</span>
+                <span id="label-loan" class="font-bold num-modern text-slate-950 text-sm">390.000 €</span>
+              </div>
+              <input type="range" id="input-loan" min="300000" max="460000" step="5000" value="390000" class="w-full accent-slate-900 cursor-pointer">
+              <div class="flex justify-between text-[10px] text-slate-400 mt-0.5 font-mono num-modern">
+                <span>300.000 €</span>
+                <span>460.000 €</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5">
+                <span class="text-slate-700">Sollzinssatz (% p.a.):</span>
+                <span id="label-interest" class="font-bold num-modern text-slate-950 text-sm">4,50 %</span>
+              </div>
+              <input type="range" id="input-interest" min="2.00" max="6.00" step="0.05" value="4.50" class="w-full accent-slate-900 cursor-pointer">
+              <div class="flex justify-between text-[10px] text-slate-400 mt-0.5 font-mono num-modern">
+                <span>2,00 %</span>
+                <span>6,00 %</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5">
+                <span class="text-slate-700">Anfängliche Tilgung (% p.a.):</span>
+                <span id="label-repayment" class="font-bold num-modern text-slate-950 text-sm">2,00 %</span>
+              </div>
+              <input type="range" id="input-repayment" min="1.00" max="4.00" step="0.10" value="2.00" class="w-full accent-slate-900 cursor-pointer">
+              <div class="flex justify-between text-[10px] text-slate-400 mt-0.5 font-mono num-modern">
+                <span>1,00 %</span>
+                <span>4,00 %</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5">
+                <span class="text-slate-700">Gewerbemiete monatlich (Kalt):</span>
+                <span id="label-rent" class="font-bold num-modern text-slate-950 text-sm">2.438 €</span>
+              </div>
+              <input type="range" id="input-rent" min="1500" max="3200" step="1" value="2438" class="w-full accent-slate-900 cursor-pointer">
+              <div class="flex justify-between text-[10px] text-slate-400 mt-0.5 font-mono num-modern">
+                <span>1.500 €</span>
+                <span>3.200 €</span>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between p-2.5 bg-slate-50 border border-slate-200 rounded-lg">
+              <label for="check-autosync-rent" class="text-[11px] text-slate-700 cursor-pointer select-none">
+                Miete an Gesamtkosten koppeln (450k)
+              </label>
+              <input type="checkbox" id="check-autosync-rent" checked class="rounded accent-slate-900 cursor-pointer">
+            </div>
+
+            <div id="calculator-status-box" class="text-[11px] text-slate-700 bg-emerald-50/70 p-3.5 border border-emerald-200/80 rounded-lg leading-relaxed">
+              <strong class="text-emerald-950 font-serif">Vollkosten-Kopplung aktiv (115,4 % Deckungsgrad):</strong> Die Gewerbemiete beträgt <strong class="num-modern">2.438 €</strong> / Mt. Gegenüber der Bankrate (<strong>2.113 €</strong>) verbleibt ein monatlicher Cashflow-Überschuss von <strong class="num-modern text-emerald-800 font-bold">+325 € / Mt. (+3.900 € p.a.)</strong> zur Amortisation des 60.000 € Eigenkapitals von Norbert Zürn.
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 flex flex-col justify-between space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-0 border border-slate-200 bg-white rounded-xl overflow-hidden shadow-soft divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
+              <div class="p-4 sm:p-5">
+                <span class="text-[10px] uppercase font-bold tracking-wider text-slate-500 block font-mono">Tatsächliche Bankrate Kauf</span>
+                <span id="calc-monthly-rate" class="text-xl sm:text-2xl font-bold num-modern text-slate-950 block mt-1">2.113 €</span>
+                <span id="calc-rate-breakdown" class="text-[10px] text-slate-500 block mt-0.5 font-mono num-modern">Zins: 1.463 € | Tilg: 650 €</span>
+              </div>
+              <div class="p-4 sm:p-5">
+                <span class="text-[10px] uppercase font-bold tracking-wider text-slate-500 block font-mono">Mieteingang Gewerbe</span>
+                <span id="calc-monthly-rent" class="text-xl sm:text-2xl font-bold num-modern text-slate-950 block mt-1">2.438 €</span>
+                <span id="calc-yearly-rent-display" class="text-[10px] text-emerald-800 font-semibold block mt-0.5 font-mono num-modern">29.250 € p.a. hochgerechnet</span>
+              </div>
+              <div id="metric-buffer-card" class="p-4 sm:p-5 bg-emerald-50/40">
+                <span id="metric-buffer-label" class="text-[10px] uppercase font-bold tracking-wider text-emerald-900 block font-mono">Cash-Überschuss</span>
+                <span id="calc-monthly-buffer" class="text-xl sm:text-2xl font-bold num-modern text-emerald-800 block mt-1">+ 325 €</span>
+                <span id="calc-coverage-ratio" class="text-[10px] font-bold text-emerald-900 block mt-0.5 font-mono num-modern">Deckung: 115,4 %</span>
+              </div>
+            </div>
+
+            <div class="border border-slate-200 bg-white rounded-xl overflow-hidden shadow-soft">
+              <div class="bg-slate-100/80 px-4 py-3 border-b border-slate-200 flex justify-between items-center">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-800 font-serif">Cashflow- & Kapitaldienstmatrix (Phase 1)</span>
+                <span class="text-[10px] font-mono text-slate-500">Werte in Euro (€)</span>
+              </div>
+              <div class="overflow-x-auto touch-scroll-x">
+                <table class="w-full text-xs text-left min-w-[480px]">
+                  <thead class="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold uppercase tracking-wider font-mono">
+                    <tr>
+                      <th class="p-3">Cashflow-Position</th>
+                      <th class="p-3 text-right">Monatlich</th>
+                      <th class="p-3 text-right">Jährlich</th>
+                      <th class="p-3">Wirkung auf Norbert Zürn</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-100 font-mono num-modern">
+                    <tr class="hover:bg-slate-50/50">
+                      <td class="p-3 font-semibold text-slate-900 font-sans">+ Gewerbemiete Marcel (GaLaBau-Betrieb)</td>
+                      <td class="p-3 text-right font-bold text-slate-900" id="table-rent-m">2.438 €</td>
+                      <td class="p-3 text-right font-bold text-slate-900" id="table-rent-y">29.250 €</td>
+                      <td class="p-3 text-slate-600 font-sans">Kaufpreis-Kopplung (450.000 €)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                      <td class="p-3 font-semibold text-slate-900 font-sans">- Annuität Bank (390.000 € Kaufpreiskredit)</td>
+                      <td class="p-3 text-right text-slate-800" id="table-rate-m">2.113 €</td>
+                      <td class="p-3 text-right text-slate-800" id="table-rate-y">25.350 €</td>
+                      <td class="p-3 text-slate-600 font-sans">4,50 % Zins + 2,00 % Tilgung</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 bg-emerald-50/30">
+                      <td class="p-3 font-semibold text-emerald-950 font-sans">= Operativer Liquiditätsüberschuss</td>
+                      <td class="p-3 text-right font-bold text-emerald-800" id="table-buffer-m">+ 325 €</td>
+                      <td class="p-3 text-right font-bold text-emerald-800" id="table-buffer-y">+ 3.900 €</td>
+                      <td class="p-3 text-emerald-900 font-sans">Laufende EK-Verzinsung (60.000 €)</td>
+                    </tr>
+                    <tr class="bg-slate-100 font-bold font-sans">
+                      <td class="p-3 uppercase text-slate-950 tracking-wider">Netto-Eigenaufwand Norbert Zürn (Kauf)</td>
+                      <td class="p-3 text-right font-mono text-emerald-700 text-sm font-extrabold num-modern">0,00 €</td>
+                      <td class="p-3 text-right font-mono text-emerald-700 text-sm font-extrabold num-modern">0,00 €</td>
+                      <td class="p-3 uppercase tracking-wider text-slate-900 text-[11px]">100 % Fremdtilgung durch Miete</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-between items-center bg-white border border-slate-200/90 p-4 rounded-xl gap-3 shadow-soft">
+        <button onclick="navigateToPage('page-plaene')" class="w-full sm:w-auto inline-flex justify-center items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-slate-950">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          <span>Zurück zu 3. Amtliche Original-PDFs</span>
+        </button>
+        <button onclick="navigateToPage('page-schutz')" class="w-full sm:w-auto inline-flex justify-center items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-950 hover:text-champagne-600">
+          <span>Weiter zu 5. Verträge, Recht & Schutzarchitektur</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- SEITE 5: VERTRAGSWERK & RECHT                                     -->
+    <!-- ================================================================= -->
+    <div id="page-schutz" class="page-tab-content space-y-6 sm:space-y-8 hidden">
+      <div class="bg-white border border-slate-200/90 p-5 sm:p-8 lg:p-10 shadow-card rounded-xl sm:rounded-2xl space-y-8">
+        <div class="border-b border-slate-200 pb-5">
+          <div class="flex items-center space-x-2">
+            <span class="px-2.5 py-0.5 text-[10px] font-mono uppercase bg-slate-900 text-champagne-300 font-bold rounded">Kategorie 05</span>
+            <span class="text-xs font-mono text-slate-500">Bankfertiges Vertragswerk & Schutzarchitektur</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-950 mt-1.5">
+            Das Vertragswerk: 7 essenzielle Bausteine & Risikoschutz
+          </h2>
+          <p class="text-slate-600 text-xs sm:text-sm mt-1 max-w-3xl">
+            Lückenlose juristische und kaufmännische Dokumentation aller Verträge für den steuerlichen Fremdvergleich, die 100%ige Fremdtilgung des Kaufpreises und die Risikofreiheit von Norbert Zürn.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs leading-relaxed">
+          <div class="border border-slate-200 p-5 space-y-3 bg-white rounded-xl shadow-soft">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+              <span class="font-bold uppercase tracking-wider text-slate-500 font-mono">Vertragsbaustein 01</span>
+              <span class="px-2 py-0.5 text-[9px] font-mono font-bold uppercase bg-slate-900 text-white rounded">Notarieller Kaufvertrag</span>
+            </div>
+            <h3 class="text-xs sm:text-sm font-bold uppercase text-slate-950 font-serif">Immobilienkaufvertrag (Helfenberger Str. 28)</h3>
+            <p class="text-slate-700 leading-relaxed">
+              Notarieller Kaufvertrag zwischen dem bisherigen Eigentümer und <strong>Norbert Zürn als alleinigem Erwerber</strong>. Festpreis 420.000 € ohne Maklerprovision. 100 % Eigentum Norbert Zürn im Grundbuch (Abt. I).
+            </p>
+          </div>
+
+          <div class="border border-slate-200 p-5 space-y-3 bg-white rounded-xl shadow-soft">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+              <span class="font-bold uppercase tracking-wider text-slate-500 font-mono">Vertragsbaustein 02</span>
+              <span class="px-2 py-0.5 text-[9px] font-mono font-bold uppercase bg-slate-900 text-white rounded">Bankkredit & Grundschuld</span>
+            </div>
+            <h3 class="text-xs sm:text-sm font-bold uppercase text-slate-950 font-serif">Darlehensvertrag & Abruflinie</h3>
+            <p class="text-slate-700 leading-relaxed">
+              Kaufpreiskredit über 390.000 € zzgl. Abrufdarlehen über 250.000 € für die schrittweise Sanierung (getragen durch Norbert Zürn). Erststellige Buchgrundschuld <em>ausschließlich</em> auf Flurstück 529 (isoliertes Ringfencing).
+            </p>
+          </div>
+
+          <div class="border border-slate-200 p-5 space-y-3 bg-white rounded-xl shadow-soft">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+              <span class="font-bold uppercase tracking-wider text-slate-500 font-mono">Vertragsbaustein 03</span>
+              <span class="px-2 py-0.5 text-[9px] font-mono font-bold uppercase bg-amber-600 text-white rounded">Gewerbemietvertrag 10 Jahre</span>
+            </div>
+            <h3 class="text-xs sm:text-sm font-bold uppercase text-slate-950 font-serif">10-Jähriger Gewerbemietvertrag (Fremdvergleich)</h3>
+            <p class="text-slate-700 leading-relaxed">
+              Geschäftsraummietvertrag zwischen Vermieter Norbert Zürn und Mieter Marcel Zürn (Einzelunternehmen). Kaltmiete: 2.438 € mtl. (skalierbar bis ca. 2.800 €). Double-Net-Betriebskostenübernahme.
+            </p>
+          </div>
+
+          <div class="border border-slate-200 p-5 space-y-3 bg-white rounded-xl shadow-soft">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+              <span class="font-bold uppercase tracking-wider text-slate-500 font-mono">Vertragsbaustein 04</span>
+              <span class="px-2 py-0.5 text-[9px] font-mono font-bold uppercase bg-slate-900 text-white rounded">Notarielles Testament</span>
+            </div>
+            <h3 class="text-xs sm:text-sm font-bold uppercase text-slate-950 font-serif">Zeitgleiches Notar-Testament / Erbvertrag</h3>
+            <p class="text-slate-700 leading-relaxed">
+              Beurkundung am selben Tag: Tritt ein Erbfall vor Übertragung ein, fällt der gewerbliche Hof im Wege des Vorausvermächtnisses an die 50/50-GbR von Marcel und Vanessa. Keine Betriebsaufspaltung ab Sekunde 1!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-between items-center bg-white border border-slate-200/90 p-4 rounded-xl gap-3 shadow-soft">
+        <button onclick="navigateToPage('page-rechner')" class="w-full sm:w-auto inline-flex justify-center items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-slate-950">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          <span>Zurück zu 4. Kapitaldienst</span>
+        </button>
+        <button onclick="navigateToPage('page-standort')" class="w-full sm:w-auto inline-flex justify-center items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-950 hover:text-champagne-600">
+          <span>Weiter zu 6. Standort & Google Maps</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- SEITE 6: STANDORT & GOOGLE MAPS                                    -->
+    <!-- ================================================================= -->
+    <div id="page-standort" class="page-tab-content space-y-6 sm:space-y-8 hidden">
+      <div class="bg-white border border-slate-200/90 p-5 sm:p-8 lg:p-10 shadow-card rounded-xl sm:rounded-2xl space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between border-b border-slate-200 pb-5 gap-4">
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="px-2.5 py-0.5 text-[10px] font-mono uppercase bg-slate-900 text-champagne-300 font-bold rounded">Kategorie 06</span>
+              <span class="px-2.5 py-0.5 text-[10px] uppercase font-bold bg-amber-100 text-amber-900 border border-amber-300 rounded">Geodaten & Satellit</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-950 mt-1.5">Standortanalyse & Satellitenansicht</h2>
+            <p class="text-slate-600 text-xs sm:text-sm mt-1">
+              Objektadresse: Helfenberger Str. 28, 71717 Beilstein-Söhlbach • Flurstück 529 (6.300 m²)
+            </p>
+          </div>
+          <div class="flex items-center space-x-2 shrink-0">
+            <button onclick="setMapMode('satellite')" id="map-mode-sat-btn" class="px-3 py-1.5 text-xs font-mono font-bold uppercase rounded-md bg-slate-900 text-champagne-400 border border-slate-900 shadow-2xs transition cursor-pointer">
+              🛰 Satellit
+            </button>
+            <button onclick="setMapMode('road')" id="map-mode-road-btn" class="px-3 py-1.5 text-xs font-mono font-bold uppercase rounded-md bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-300 shadow-2xs transition cursor-pointer">
+              🗺 Karte
+            </button>
+            <a href="https://www.google.com/maps/search/?api=1&query=Helfenberger+Str.+28,+71717+Beilstein-S%C3%B6hlbach" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider border border-slate-900 bg-slate-900 text-white hover:bg-slate-800 rounded-md shadow-soft transition cursor-pointer">
+              <span>Google Maps ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="border border-slate-300 rounded-xl overflow-hidden h-[48vh] sm:h-[58vh] lg:h-[520px] min-h-[380px] relative bg-slate-900 shadow-inner">
+          <iframe 
+            id="google-maps-iframe"
+            title="Google Maps Betriebshof Beilstein Satellitenansicht"
+            src="https://maps.google.com/maps?q=Helfenberger%20Str.%2028,%2071717%20Beilstein-S%C3%B6hlbach&t=k&z=17&ie=UTF8&iwloc=&output=embed" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            class="w-full h-full">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-between items-center bg-white border border-slate-200/90 p-4 rounded-xl gap-3 shadow-soft">
+        <button onclick="navigateToPage('page-schutz')" class="w-full sm:w-auto inline-flex justify-center items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-slate-950">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          <span>Zurück zu 5. Verträge & Recht</span>
+        </button>
+        <button onclick="navigateToPage('page-galerie')" class="w-full sm:w-auto inline-flex justify-center items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-950 hover:text-champagne-600">
+          <span>Weiter zu 7. Fotos & Nachweise</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- SEITE 7: FOTOS & NACHWEISE                                        -->
+    <!-- ================================================================= -->
+    <div id="page-galerie" class="page-tab-content space-y-6 sm:space-y-8 hidden">
+      <div class="bg-white border border-slate-200/90 p-5 sm:p-8 lg:p-10 shadow-card rounded-xl sm:rounded-2xl space-y-8">
+        <div class="border-b border-slate-200 pb-5">
+          <div class="flex items-center space-x-2">
+            <span class="px-2.5 py-0.5 text-[10px] font-mono uppercase bg-slate-900 text-champagne-300 font-bold rounded">Kategorie 07</span>
+            <span class="px-2.5 py-0.5 text-[10px] uppercase font-bold bg-amber-100 text-amber-900 border border-amber-300 rounded">Objektfotos & Rechtsnachweise</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-950 mt-1.5">Objektfotos, Grundbuchauszug & Urkunden</h2>
+          <p class="text-slate-600 text-xs sm:text-sm mt-1">
+            Liegenschaftsaufnahmen sowie Grundbuch- und Urkundendokumentation (Flurstück 529, 6.300 m²).
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2.5">
+            <button onclick="selectOfficialPhoto(0)" id="photo-tab-0" class="photo-tab-btn text-left p-3 border-2 border-slate-900 bg-slate-900 text-white rounded-lg transition shadow-soft">
+              <span class="text-[10px] font-mono text-champagne-400 block uppercase font-bold">Baukörper 1</span>
+              <span class="text-xs font-bold block mt-0.5 truncate text-white">Zweifamilienhaus</span>
+              <span class="text-[10px] text-slate-300 block mt-0.5">Wohnen ca. 160 m²</span>
+            </button>
+            <button onclick="selectOfficialPhoto(1)" id="photo-tab-1" class="photo-tab-btn text-left p-3 border border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-900 rounded-lg transition">
+              <span class="text-[10px] font-mono text-slate-500 block uppercase font-bold">Baukörper 1</span>
+              <span class="text-xs font-bold block mt-0.5 truncate text-slate-900">Frontansicht</span>
+              <span class="text-[10px] text-slate-500 block mt-0.5">1 Vollgeschoß + Keller</span>
+            </button>
+            <button onclick="selectOfficialPhoto(2)" id="photo-tab-2" class="photo-tab-btn text-left p-3 border border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-900 rounded-lg transition">
+              <span class="text-[10px] font-mono text-slate-500 block uppercase font-bold">Baukörper 2</span>
+              <span class="text-xs font-bold block mt-0.5 truncate text-slate-900">Mehrzweckhalle</span>
+              <span class="text-[10px] text-slate-500 block mt-0.5">GaLaBau ca. 270 m²</span>
+            </button>
+            <button onclick="selectOfficialPhoto(3)" id="photo-tab-3" class="photo-tab-btn text-left p-3 border border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-900 rounded-lg transition">
+              <span class="text-[10px] font-mono text-slate-500 block uppercase font-bold">Baukörper 2</span>
+              <span class="text-xs font-bold block mt-0.5 truncate text-slate-900">Hallenlängsseite</span>
+              <span class="text-[10px] text-slate-500 block mt-0.5">26,50 m Tore</span>
+            </button>
+            <button onclick="selectOfficialPhoto(4)" id="photo-tab-4" class="photo-tab-btn text-left p-3 border border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-900 rounded-lg transition">
+              <span class="text-[10px] font-mono text-slate-500 block uppercase font-bold">Baukörper 3</span>
+              <span class="text-xs font-bold block mt-0.5 truncate text-slate-900">Werkstätten</span>
+              <span class="text-[10px] text-slate-500 block mt-0.5">2x 32 m² + Carport</span>
+            </button>
+            <button onclick="selectOfficialPhoto(5)" id="photo-tab-5" class="photo-tab-btn text-left p-3 border border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-900 rounded-lg transition">
+              <span class="text-[10px] font-mono text-slate-500 block uppercase font-bold">Grundriss</span>
+              <span class="text-xs font-bold block mt-0.5 truncate text-slate-900">Grundriss EG</span>
+              <span class="text-[10px] text-slate-500 block mt-0.5">Wohnhaus ca. 160 m²</span>
+            </button>
+          </div>
+
+          <div id="photo-viewer-container" class="border border-slate-300 rounded-xl bg-slate-100 shadow-inner flex flex-col h-[50vh] sm:h-[60vh] lg:h-[650px] min-h-[380px] overflow-hidden">
+            <div id="photo-embed-slot" class="flex-grow w-full relative bg-slate-200/40 p-1">
+              <iframe 
+                id="google-drive-photo-frame"
+                src="https://drive.google.com/file/d/1-YFs2czODrGKpASAyrQiUywlmkIhSpuH/preview" 
+                class="w-full h-full rounded-lg bg-white shadow-2xs border border-slate-200"
+                allow="autoplay">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-between items-center bg-white border border-slate-200/90 p-4 rounded-xl gap-3 shadow-soft">
+        <button onclick="navigateToPage('page-standort')" class="w-full sm:w-auto inline-flex justify-center items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-slate-950">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          <span>Zurück zu 6. Standort</span>
+        </button>
+        <button onclick="navigateToPage('page-overview')" class="w-full sm:w-auto inline-flex justify-center items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-950 hover:text-champagne-600">
+          <span>Zurück zur Übersicht</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- SEITE 8: FAMILIEN-GBR MASTERPLAN (NORBERT, MARCEL & VANESSA ZÜRN) -->
+    <!-- ================================================================= -->
+    <div id="page-familie" class="page-tab-content family-only space-y-6 sm:space-y-8 hidden">
+      <div class="bg-white border border-slate-200/90 p-5 sm:p-8 lg:p-10 shadow-card rounded-xl sm:rounded-2xl space-y-8">
+        
+        <div class="border-b border-slate-200 pb-5">
+          <div class="flex items-center space-x-2 flex-wrap">
+            <span class="px-2.5 py-0.5 text-[10px] font-mono uppercase bg-slate-900 text-champagne-300 font-bold rounded">
+              Kategorie 08
+            </span>
+            <span class="px-2.5 py-0.5 text-[10px] uppercase font-bold bg-amber-100 text-amber-900 border border-amber-300 rounded">
+              Chronologischer Familien-Masterplan
+            </span>
+            <span class="text-xs font-mono text-slate-500">
+              Norbert, Marcel &amp; Vanessa Zürn • Stand: September 2026
+            </span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-950 mt-1.5">
+            Das Familien-Strategiegutachten: Norbert, Marcel &amp; Vanessa Zürn
+          </h2>
+          <p class="text-slate-600 text-xs sm:text-sm mt-1 max-w-4xl leading-relaxed">
+            Dieses interne Dossier fasst alle strategischen Festlegungen für Norbert, Marcel und Vanessa in ihrer <strong>exakten chronologischen Abfolge</strong> zusammen: 
+            Vom Erwerb und der Abrufsanierung über die rechtzeitige Vorab-Gründung der GbR (zur Vermeidung jeder Bankhaftung für Vanessa) bis hin zur späteren notariellen Schenkung mit befreiender Schuldübernahme, lebenslangem Wohnrecht für Norbert (§ 1093 BGB), 0 € Schenkungsteuer und dauerhaftem Ausschluss der Betriebsaufspaltung.
+          </p>
+        </div>
+
+        <!-- 4 CHRONOLOGISCHE FAMILIENSÄULEN -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 text-xs leading-relaxed">
+          
+          <!-- SÄULE 1: PHASE 1 (START & SANIERUNG) -->
+          <div class="border border-slate-200/90 p-6 sm:p-7 space-y-4 shadow-card rounded-xl hover:border-slate-300 transition bg-white flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <span class="text-[10px] sm:text-xs uppercase tracking-wider font-mono font-bold text-slate-400">Schritt 01 • Phase 1 (Jahre 1–2)</span>
+                <span class="px-2 py-0.5 text-[9px] font-mono font-bold bg-slate-900 text-champagne-300 rounded shadow-2xs">
+                  Start: Kauf &amp; Sanierung
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-bold text-slate-950 uppercase tracking-tight font-serif">Kauf, 250k-Abrufsanierung &amp; ungeteiltes Grundstück</h3>
+              <p class="text-slate-600 leading-relaxed text-xs sm:text-[13px]">
+                Norbert kauft das 6.300 m² Areal allein (420.000 € Kaufpreis, 60.000 € Bar-EK, 390.000 € Kaufkredit). Das Anwesen bleibt ungeteilt (5.000–8.000 € Vermessung gespart).
+              </p>
+              <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl text-xs text-slate-800 leading-relaxed space-y-1.5 shadow-2xs">
+                <div class="flex items-center space-x-2">
+                  <span class="w-2 h-2 rounded-full bg-slate-900 shrink-0"></span>
+                  <strong class="font-serif text-slate-950 text-xs uppercase tracking-wide">Lastenteilung während der Sanierungsphase:</strong>
+                </div>
+                <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                  • <strong>Marcel:</strong> Zahlt 2.438 € mtl. Gewerbemiete für Hof &amp; Hallen. Deckt den Kaufpreiskredit (2.113 € Rate) zu 115,4 % (+325 € Puffer für Norbert).<br>
+                  • <strong>Norbert:</strong> Zieht ins Wohnhaus, spart seine private Fremdmiete ein und bedient die nach Baufortschritt abgerufenen Sanierungstranchen (250k Kredit) eigenständig.<br>
+                  • <strong>Ergebnis:</strong> Bis zum Übergabeschritt ist die Sanierung planmäßig durch!
+                </p>
+              </div>
+            </div>
+            <ul class="text-xs text-slate-700 space-y-2 border-t border-slate-100 pt-4">
+              <li class="flex items-start space-x-2.5">
+                <span class="text-emerald-700 font-bold shrink-0">✓</span>
+                <span>Marcels Firmenliquidität bleibt stabil (keine unbezahlbaren Mietspitzen)</span>
+              </li>
+              <li class="flex items-start space-x-2.5">
+                <span class="text-emerald-700 font-bold shrink-0">✓</span>
+                <span>Keine Behördenverzögerung im Außenbereich (§ 35 BauGB)</span>
+              </li>
+              <li class="flex items-start space-x-2.5">
+                <span class="text-emerald-700 font-bold shrink-0">✓</span>
+                <span>Zeitgleiches Notar-Testament sichert Erbfall ab Sekunde 1 ab</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- SÄULE 2: PHASE 2 (GBR-GRÜNDUNG VOR DER SCHENKUNG) -->
+          <div class="border border-slate-200/90 p-6 sm:p-7 space-y-4 shadow-card rounded-xl hover:border-slate-300 transition bg-white flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <span class="text-[10px] sm:text-xs uppercase tracking-wider font-mono font-bold text-slate-400">Schritt 02 • Phase 2 (Vor Übertragung)</span>
+                <span class="px-2 py-0.5 text-[9px] font-mono font-bold bg-amber-100 text-amber-900 border border-amber-300 rounded shadow-2xs">
+                  Vorbereitung: GbR-Gründung
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-bold text-slate-950 uppercase tracking-tight font-serif">Gründung der Familien-GbR (Marcel &amp; Vanessa 50/50)</h3>
+              <p class="text-slate-600 leading-relaxed text-xs sm:text-[13px]">
+                Noch <strong>vor</strong> der eigentlichen notariellen Schenkung gründen Marcel und Vanessa die vermögensverwaltende GbR mit maßgeschneidertem Gesellschaftsvertrag.
+              </p>
+              <div class="bg-amber-50/70 border border-amber-200/80 p-4 rounded-xl text-xs text-slate-800 leading-relaxed space-y-1.5 shadow-2xs">
+                <div class="flex items-center space-x-2">
+                  <span class="w-2 h-2 rounded-full bg-amber-600 shrink-0"></span>
+                  <strong class="font-serif text-amber-950 text-xs uppercase tracking-wide">0 € Haftung Vanessa &amp; BFH-Schutz vor Betriebsaufspaltung:</strong>
+                </div>
+                <p class="text-[11px] sm:text-xs text-slate-700 leading-relaxed">
+                  • <strong>0,00 € Bankhaftung:</strong> Vanessa unterschreibt heute bei der Bank für keinen Cent Darlehen.<br>
+                  • <strong>Einstimmigkeitsprinzip:</strong> Für alle Miet-, Kündigungs- und Nutzungsbeschlüsse gilt Einstimmigkeit. Volljährige Geschwister gelten steuerlich als fremde Dritte -> Marcel kann die Vermieterseite nicht alleine beherrschen -> <strong>Betriebsaufspaltung nach ständiger BFH-Rechtsprechung für immer ausgeschlossen!</strong>
+                </p>
+              </div>
+            </div>
+            <ul class="text-xs text-slate-700 space-y-2 border-t border-slate-100 pt-4">
+              <li class="flex items-start space-x-2.5">
+                <span class="text-emerald-700 font-bold shrink-0">✓</span>
+                <span>Standort- und Mietgarantie für Marcels GaLaBau-Betrieb</span>
+              </li>
+              <li class="flex items-start space-x-2.5">
+                <span class="text-emerald-700 font-bold shrink-0">✓</span>
+                <span>Operative Geschäftsführung durch Marcel (Tagesgeschäft frei von Bürokratie)</span>
+              </li>
+              <li class="flex items-start space-x-2.5">
+                <span class="text-emerald-700 font-bold shrink-0">✓</span>
+                <span>Pflichtteilsverzicht bezüglich des Betriebs sichert den Familienfrieden</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- SÄULE 3: PHASE 3 (NOTAR-TERMIN SCHENKUNG & WOHNRECHT) -->
+          <div class="border border-slate-200/90 p-6 sm:p-7 space-y-4 shadow-card rounded-xl hover:border-slate-300 transition bg-white flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <span class="text-[10px] sm:text-xs uppercase tracking-wider font-mono font-bold text-slate-400">Schritt 03 • Phase 3 (Nach 2–3 Jahren)</span>
+                <span class="px-2 py-0.5 text-[9px] font-mono font-bold bg-emerald-100 text-emerald-900 border border-emerald-300 rounded shadow-2xs">
+                  Notartermin Übertragung
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-bold text-slate-950 uppercase tracking-tight font-serif">Notarielle Schenkung, Wohnrecht (§ 1093 BGB) &amp; Schuldübernahme</h3>
+              <p class="text-slate-600 leading-relaxed text-xs sm:text-[13px]">
+                Nach Abschluss der Sanierung überträgt Norbert das sanierte Liegenschaftsensemble per Notarvertrag auf die handlungsfähige Familien-GbR (Marcel &amp; Vanessa).
+              </p>
+              <div class="bg-emerald-50/50 border border-emerald-200/80 p-4 rounded-xl text-xs text-slate-800 leading-relaxed space-y-1.5 shadow-2xs">
+                <div class="flex items-center space-x-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-600 shrink-0"></span>
+                  <strong class="font-serif text-emerald-950 text-xs uppercase tracking-wide">Die beiden tragenden Vertragssäulen beim Notar:</strong>
+                </div>
+                <p class="text-[11px] sm:text-xs text-slate-700 leading-relaxed">
+                  • <strong>Dingliches Wohnungsrecht (§ 1093 BGB):</strong> Norbert erhält ein lebenslanges, unkündbares Wohnungsrecht am Wohnhaus nebst Garten, eingetragen in <strong>Abteilung II des Grundbuchs</strong>. Er ist rechtlich unantastbar wie ein Eigentümer.<br>
+                  • <strong>Befreiende Schuldübernahme (§ 414 BGB):</strong> Die GbR übernimmt die verbleibende Gesamtrestschuld (Kaufkredit + abgerufene Sanierung). <strong>Norbert wird zu 100 % aus jeder Bankenhaftung entlassen!</strong>
+                </p>
+              </div>
+            </div>
+            <ul class="text-xs text-slate-700 space-y-2 border-t border-slate-100 pt-4">
+              <li class="flex items-start space-x-2.5">
+                <span class="text-emerald-700 font-bold shrink-0">✓</span>
+                <span>Norbert ist ab Tag des Notarvollzugs vollständig schuldenfrei</span>
+              </li>
+              <li class="flex items-start space-x-2.5">
+                <span class="text-emerald-700 font-bold shrink-0">✓</span>
+                <span>Unkündbarer Schutz für Norbert ohne bürokratische Grundstücksteilung</span>
+              </li>
+              <li class="flex items-start space-x-2.5">
+                <span class="text-emerald-700 font-bold shrink-0">✓</span>
+                <span>Bank behält erststellige Grundschuld auf dem 6.300 m² Areal</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- SÄULE 4: PHASE 4 (LAUFENDER BETRIEB & STEUERFREIHEIT) -->
+          <div class="border border-slate-200/90 p-6 sm:p-7 space-y-4 shadow-card rounded-xl hover:border-slate-300 transition bg-white flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <span class="text-[10px] sm:text-xs uppercase tracking-wider font-mono font-bold text-slate-400">Schritt 04 • Phase 4 (Zukunft &amp; Dauerbetrieb)</span>
+                <span class="px-2 py-0.5 text-[9px] font-mono font-bold bg-emerald-100 text-emerald-900 border border-emerald-300 rounded shadow-2xs">
+                  Dauerhafter Zahlungsfluss
+                </span>
+              </div>
+              <h3 class="text-base sm:text-lg font-bold text-slate-950 uppercase tracking-tight font-serif">Automatisierte Fremdtilgung &amp; 0,00 € Schenkungsteuer</h3>
+              <p class="text-slate-600 leading-relaxed text-xs sm:text-[13px]">
+                Ab dem Übertragungsstichtag bedient die GbR den Kapitaldienst vollautomatisch über die Mieteinnahmen – weder Marcel noch Vanessa müssen privates Geld zuschießen.
+              </p>
+              <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl text-xs text-slate-800 leading-relaxed space-y-1.5 shadow-2xs font-mono">
+                <strong class="font-serif text-slate-900 text-xs uppercase tracking-wide font-sans block">Der automatisierte Geldfluss ab Phase 4:</strong>
+                <p class="text-[11px] text-slate-700 leading-relaxed">
+                  • <strong>Mieteinnahmen:</strong> Marcels GaLaBau-Betrieb zahlt 2.438 € (skalierbar bis 2.800 €) Miete auf das GbR-Konto. Norbert kann optional einen regulären Wohnungsbeitrag (z. B. 400 € mtl. gem. § 21 Abs. 2 EStG) leisten.<br>
+                  • <strong>Kredittilgung:</strong> Die GbR bedient die Bankrate direkt per Lastschrift.<br>
+                  • <strong>Steuerhebel:</strong> Durch den Abzug der übernommenen Bankschulden und des Wohnrechts sinkt der Reinerwerb so drastisch, dass bei 800.000 € Freibetrag <strong>0,00 € Schenkungsteuer</strong> anfallen!
+                </p>
+              </div>
+            </div>
+            <ul class="text-xs text-slate-700 space-y-2 border-t border-slate-100 pt-4">
+              <li class="flex items-start space-x-2.5">
+                <span class="text-emerald-700 font-bold shrink-0">✓</span>
+                <span>Freibetrag nach § 16 ErbStG verdoppelt (2 × 400.000 € = 800.000 €)</span>
+              </li>
+              <li class="flex items-start space-x-2.5">
+                <span class="text-emerald-700 font-bold shrink-0">✓</span>
+                <span>Vollständige Grunderwerbsteuerfreiheit nach § 3 Nr. 6 GrEStG</span>
+              </li>
+              <li class="flex items-start space-x-2.5">
+                <span class="text-emerald-700 font-bold shrink-0">✓</span>
+                <span>Voller Zinsabzug und Gebäude-AfA bleiben in der GbR erhalten</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SCHENKUNGSTEUER-BERECHNUNG NACH 2-3 JAHREN -->
+        <div class="border border-slate-200 p-5 sm:p-7 space-y-5 bg-white rounded-xl shadow-soft">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-200 pb-3 gap-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-500 uppercase font-bold tracking-wider">Steuerliche Bewertung & Schenkung nach 2–3 Jahren</span>
+              <h3 class="text-sm sm:text-base font-bold uppercase tracking-wider text-slate-950 font-serif mt-0.5">
+                Schenkungsteuer-Hebel: Warum bei der GbR-Übernahme 0,00 € Steuern anfallen
+              </h3>
+            </div>
+            <span class="text-xs font-mono font-bold text-emerald-800 bg-emerald-50 border border-emerald-300 px-3 py-1 rounded-md self-start sm:self-auto shadow-2xs">
+              2 × 400.000 € = 800.000 € Freibetrag nach § 16 ErbStG
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 text-xs">
+            <div class="border border-slate-200 bg-slate-50/60 rounded-xl p-4 sm:p-5 space-y-3 shadow-2xs">
+              <strong class="text-slate-950 font-serif block text-xs sm:text-sm uppercase tracking-wide">Berechnung des steuerlichen Reinerwerbs:</strong>
+              <div class="border border-slate-200 rounded-lg overflow-hidden bg-white shadow-2xs">
+                <table class="w-full text-xs font-mono num-modern">
+                  <tbody class="divide-y divide-slate-100">
+                    <tr class="hover:bg-slate-50/50">
+                      <td class="p-2.5 text-slate-600 font-sans">Verkehrswert nach Teilsanierung (ca.)</td>
+                      <td class="p-2.5 text-right font-bold text-slate-950">550.000 €</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                      <td class="p-2.5 text-slate-600 font-sans">./. Befreiend übernommene Bankrestschuld (Kauf + Sanierung)</td>
+                      <td class="p-2.5 text-right font-bold text-amber-900">- 430.000 €</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                      <td class="p-2.5 text-slate-600 font-sans">./. Kapitalwert Wohnungsrecht Norbert (§ 14 BewG)</td>
+                      <td class="p-2.5 text-right font-bold text-amber-900">- 80.000 €</td>
+                    </tr>
+                    <tr class="bg-emerald-50/60 font-bold">
+                      <td class="p-2.5 text-emerald-950 font-sans">= Steuerlicher Gesamtreinerwerb der GbR</td>
+                      <td class="p-2.5 text-right text-emerald-800 text-sm">40.000 €</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                      <td class="p-2.5 text-slate-600 font-sans">Anteil Marcel Zürn (50 %)</td>
+                      <td class="p-2.5 text-right text-slate-800">20.000 €</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50">
+                      <td class="p-2.5 text-slate-600 font-sans">Anteil Vanessa Zürn (50 %)</td>
+                      <td class="p-2.5 text-right text-slate-800">20.000 €</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="border border-slate-200 bg-slate-50/60 rounded-xl p-4 sm:p-5 space-y-3.5 shadow-2xs flex flex-col justify-between">
+              <div class="space-y-3">
+                <strong class="text-emerald-950 font-serif block text-xs sm:text-sm uppercase tracking-wide">Ausschöpfung der Freibeträge (§ 16 ErbStG):</strong>
+                <p class="text-slate-600 text-[11px] sm:text-xs leading-relaxed">
+                  Da Norbert an jedes Kind alle 10 Jahre <strong>400.000 € steuerfrei</strong> übertragen darf, verbrauchen Marcel und Vanessa jeweils nur <strong>20.000 €</strong> ihres 400.000-€-Freibetrags.
+                </p>
+                <div class="bg-white border border-emerald-200 p-3.5 rounded-lg text-xs font-mono num-modern space-y-1.5 shadow-2xs">
+                  <div class="flex justify-between text-slate-700"><span>Verbleibender Freibetrag Marcel:</span><strong class="text-emerald-800 font-bold">380.000 € frei</strong></div>
+                  <div class="flex justify-between text-slate-700"><span>Verbleibender Freibetrag Vanessa:</span><strong class="text-emerald-800 font-bold">380.000 € frei</strong></div>
+                  <div class="flex justify-between pt-1.5 border-t border-slate-100 text-slate-950 font-bold"><span>Anfallende Schenkungsteuer:</span><span class="text-emerald-700 text-sm">0,00 €</span></div>
+                </div>
+              </div>
+              <p class="text-slate-500 text-[10px] sm:text-[11px] leading-relaxed pt-1">
+                <strong>Hinweis Grunderwerbsteuer:</strong> Nach § 3 Nr. 6 GrEStG ist die Grundstücksübertragung in gerader Linie von Norbert an seine leiblichen Kinder Marcel und Vanessa vollständig grunderwerbsteuerfrei.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 KERNKLAUSELN IM GBR-VERTRAG -->
+        <div class="border border-slate-200 p-5 sm:p-7 space-y-5 bg-white rounded-xl shadow-soft">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-200 gap-2">
+            <div>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-slate-500 font-bold block">Vertragsrechtliche Schutzarchitektur</span>
+              <h3 class="text-sm sm:text-base font-bold uppercase tracking-wider text-slate-950 font-serif mt-0.5">
+                Die 6 essenziellen Schutzklauseln im Gesellschaftsvertrag der GbR (Marcel &amp; Vanessa)
+              </h3>
+            </div>
+            <span class="px-2.5 py-1 text-[10px] font-mono font-bold uppercase bg-slate-900 text-champagne-300 rounded self-start sm:self-auto shadow-2xs">
+              Schutz für Firma & Familie
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs leading-relaxed">
+            <div class="bg-slate-50/70 p-4 rounded-xl border border-slate-200 space-y-2 shadow-2xs">
+              <span class="font-mono text-slate-500 text-[10px] font-bold uppercase">Klausel 01 • Einstimmigkeit</span>
+              <strong class="text-slate-950 font-serif block text-xs">Miet- &amp; Nutzungsbeschlüsse</strong>
+              <p class="text-slate-600 text-[11px] leading-relaxed">
+                Mietverträge bedürfen zwingend der Einstimmigkeit beider Gesellschafter. Dadurch wird die personelle Verflechtung (Betriebsaufspaltung) nach BFH-Rechtsprechung rechtssicher ausgeschlossen.
+              </p>
+            </div>
+
+            <div class="bg-slate-50/70 p-4 rounded-xl border border-slate-200 space-y-2 shadow-2xs">
+              <span class="font-mono text-slate-500 text-[10px] font-bold uppercase">Klausel 02 • Standortgarantie</span>
+              <strong class="text-slate-950 font-serif block text-xs">Betriebssicherung GaLaBau</strong>
+              <p class="text-slate-600 text-[11px] leading-relaxed">
+                Langfristige Bereitstellung des Betriebshofs für Marcels Fachbetrieb zu marktüblichen Bedingungen. Eine willkürliche Kündigung durch Vanessa ist vertraglich ausgeschlossen.
+              </p>
+            </div>
+
+            <div class="bg-slate-50/70 p-4 rounded-xl border border-slate-200 space-y-2 shadow-2xs">
+              <span class="font-mono text-slate-500 text-[10px] font-bold uppercase">Klausel 03 • Geschäftsführung</span>
+              <strong class="text-slate-950 font-serif block text-xs">Operatives Management</strong>
+              <p class="text-slate-600 text-[11px] leading-relaxed">
+                Marcel wird zum geschäftsführenden Gesellschafter für das laufende Tagesgeschäft (Handwerker, Versicherungen) bestellt. Grundlagengeschäfte verbleiben in der Einstimmigkeit.
+              </p>
+            </div>
+
+            <div class="bg-slate-50/70 p-4 rounded-xl border border-slate-200 space-y-2 shadow-2xs">
+              <span class="font-mono text-slate-500 text-[10px] font-bold uppercase">Klausel 04 • Abfindung</span>
+              <strong class="text-slate-950 font-serif block text-xs">5- bis 10-jährige Ratenabfindung</strong>
+              <p class="text-slate-600 text-[11px] leading-relaxed">
+                Möchte ein Partner ausscheiden, hat der andere das vorrangige Übernahmerecht. Eine Abfindung wird über 5 bis 10 Jahre gestundet, um die Liquidität von Firma und Familie zu schützen.
+              </p>
+            </div>
+
+            <div class="bg-slate-50/70 p-4 rounded-xl border border-slate-200 space-y-2 shadow-2xs">
+              <span class="font-mono text-slate-500 text-[10px] font-bold uppercase">Klausel 05 • Nachfolge</span>
+              <strong class="text-slate-950 font-serif block text-xs">Schutz vor Dritt-Erben</strong>
+              <p class="text-slate-600 text-[11px] leading-relaxed">
+                Verstirbt ein Gesellschafter, wächst sein Anteil nach § 712 BGB n.F. dem verbleibenden Partner an. Ein Hineinregieren außenstehender Erbengemeinschaften ist ausgeschlossen.
+              </p>
+            </div>
+
+            <div class="bg-emerald-50/50 p-4 rounded-xl border border-emerald-200 space-y-2 shadow-2xs">
+              <span class="font-mono text-emerald-800 text-[10px] font-bold uppercase">Klausel 06 • Steuerliche AfA</span>
+              <strong class="text-emerald-950 font-serif block text-xs">Einkünfte aus V&amp;V (§ 21 EStG)</strong>
+              <p class="text-slate-700 text-[11px] leading-relaxed">
+                Die GbR erzielt rein vermögensverwaltende Einkünfte. Zinsen und Gebäude-AfA werden steuermindernd gegengerechnet. Der Zinsabzug bleibt in voller Höhe erhalten.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MATRIX-TABELLE: DIE 4 CHRONOLOGISCHEN PHASEN -->
+        <div class="border border-slate-200 bg-white rounded-xl p-5 sm:p-7 space-y-4 shadow-soft">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 font-serif">
+              Matrix: Chronologischer Liquiditäts- und Kreditfluss in allen 4 Phasen
+            </h3>
+            <span class="text-[10px] font-mono text-slate-500">Phasenvergleich</span>
+          </div>
+
+          <div class="border border-slate-200 rounded-lg overflow-x-auto touch-scroll-x shadow-2xs">
+            <table class="w-full text-left text-xs min-w-[550px]">
+              <thead class="bg-slate-100/80 border-b border-slate-200 text-slate-700 font-semibold uppercase tracking-wider font-mono">
+                <tr>
+                  <th class="p-3">Phase / Zeitraum</th>
+                  <th class="p-3">Darlehensschuldner</th>
+                  <th class="p-3">Einnahmen (Miete / Wohnnutzung)</th>
+                  <th class="p-3">Wer bedient die Rate?</th>
+                  <th class="p-3 text-right">Belastung Norbert Zürn</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 font-mono num-modern">
+                <tr class="hover:bg-slate-50/80">
+                  <td class="p-3 font-semibold text-slate-900 font-sans">1. Start (Kauf &amp; Sanierungsabruf)</td>
+                  <td class="p-3 text-slate-700">Norbert Zürn</td>
+                  <td class="p-3 text-slate-700">Marcel: 2.438 € Kaltmiete</td>
+                  <td class="p-3 text-slate-700">Kauf durch Miete gedeckt; Sanierungsrate trägt Norbert</td>
+                  <td class="p-3 text-right text-emerald-800 font-bold">Gedeckt durch Mietersparnis</td>
+                </tr>
+                <tr class="hover:bg-slate-50/80">
+                  <td class="p-3 font-semibold text-slate-900 font-sans">2. Sanierung fertig &amp; GbR-Gründung</td>
+                  <td class="p-3 text-slate-700">Norbert Zürn (vor Übertrag)</td>
+                  <td class="p-3 text-slate-700">Marcel: 2.438 € Kaltmiete</td>
+                  <td class="p-3 text-slate-700">GbR wird vertraglich gegründet; Vanessa haftet für 0 €</td>
+                  <td class="p-3 text-right text-emerald-800 font-bold">Gedeckt durch Mietersparnis</td>
+                </tr>
+                <tr class="hover:bg-slate-50/80 bg-emerald-50/30">
+                  <td class="p-3 font-semibold text-emerald-950 font-sans">3. Notarvollzug (Schenkung &amp; Schuldübernahme)</td>
+                  <td class="p-3 text-emerald-900">GbR (befreiende Schuldübernahme)</td>
+                  <td class="p-3 text-emerald-900">Marcel zahlt an die GbR; Norbert erhält Wohnrecht (§ 1093)</td>
+                  <td class="p-3 text-emerald-900">Die GbR übernimmt den Gesamtkredit bei der Bank</td>
+                  <td class="p-3 text-right text-emerald-800 font-bold">0,00 € (vollständig schuldenfrei!)</td>
+                </tr>
+                <tr class="hover:bg-slate-50/80 bg-emerald-50/50">
+                  <td class="p-3 font-semibold text-emerald-950 font-sans">4. Dauerhafter GbR-Betrieb</td>
+                  <td class="p-3 text-emerald-900">Die GbR (Marcel &amp; Vanessa)</td>
+                  <td class="p-3 text-emerald-900">Marcel: 2.438–2.800 € (+ evtl. 400 € Norbert)</td>
+                  <td class="p-3 text-emerald-900">GbR bedient Bankrate automatisch aus Miete</td>
+                  <td class="p-3 text-right text-emerald-800 font-bold">0,00 € (mietfrei bzw. 400 € Wohnbeitrag)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-between items-center bg-white border border-slate-200/90 p-4 rounded-xl gap-3 shadow-soft">
+        <button onclick="navigateToPage('page-schutz')" class="w-full sm:w-auto inline-flex justify-center items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-slate-950">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          <span>Zurück zu 5. Verträge & Recht</span>
+        </button>
+        <button onclick="navigateToPage('page-overview')" class="w-full sm:w-auto inline-flex justify-center items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-950 hover:text-champagne-600">
+          <span>Zurück zur Übersicht</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white py-5 sm:py-7 text-xs text-slate-500 no-print mt-auto">
+    <div id="footer-container" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3 font-mono text-center sm:text-left transition-all duration-300">
+      <div class="flex items-center space-x-2">
+        <span class="w-2 h-2 rounded-full bg-champagne-500"></span>
+        <span id="footer-mode-label" class="text-slate-700 font-medium">Bankdossier Wohnhaus + Betriebshof Beilstein • Käufer Norbert Zürn</span>
+      </div>
+      <div class="text-slate-500">Flurstück 529 (6.300 m²) • Kaufpreis: 420.000 € • EK: 60.000 € • Kaufkredit: 390.000 € • Sanierungsabruf: 250.000 €</div>
+    </div>
+  </footer>
+
+  </div>
+
+  <script>
+    let currentAccessMode = null;
+
+    function pruefePasswort() {
+      const passwortInput = document.getElementById("passwort-input");
+      const overlay = document.getElementById("passwort-overlay");
+      const inhalt = document.getElementById("geschuetzter-inhalt");
+      const fehler = document.getElementById("fehlermeldung");
+
+      if (!passwortInput) return;
+      const eingabe = passwortInput.value.trim();
+
+      if (eingabe === "Beilstein2026") {
+        currentAccessMode = "bank";
+        aktiviereModus(currentAccessMode);
+      } else if (eingabe.toLowerCase() === "zürn" || eingabe.toLowerCase() === "zuern") {
+        currentAccessMode = "family";
+        aktiviereModus(currentAccessMode);
+      } else {
+        if (fehler) fehler.classList.remove("hidden");
+        passwortInput.classList.add("border-rose-500", "focus:border-rose-500", "focus:ring-rose-500");
+        passwortInput.select();
+      }
+    }
+
+    function aktiviereModus(mode) {
+      const overlay = document.getElementById("passwort-overlay");
+      const inhalt = document.getElementById("geschuetzter-inhalt");
+      const fehler = document.getElementById("fehlermeldung");
+      const badge = document.getElementById("access-mode-badge");
+      const footerLabel = document.getElementById("footer-mode-label");
+      const navGrid = document.getElementById("desktop-nav-grid");
+
+      if (fehler) fehler.classList.add("hidden");
+      if (overlay) overlay.style.display = "none";
+      if (inhalt) inhalt.style.display = "flex";
+
+      const familyElements = document.querySelectorAll(".family-only");
+
+      if (mode === "family") {
+        familyElements.forEach(el => el.classList.remove("hidden"));
+        if (badge) {
+          badge.className = "px-2 py-0.5 text-[8px] sm:text-[9px] uppercase font-bold tracking-wider rounded badge-family shadow-2xs";
+          badge.textContent = "Norbert, Marcel & Vanessa Zürn (Familienmodus)";
+        }
+        if (footerLabel) {
+          footerLabel.textContent = "Strategiedossier Familie Zürn • Norbert, Marcel & Vanessa Zürn • Stand: September 2026";
+        }
+        if (navGrid) {
+          navGrid.className = "hidden lg:grid grid-cols-8 gap-2 py-2.5 text-left transition-all";
+        }
+      } else {
+        familyElements.forEach(el => el.classList.add("hidden"));
+        if (badge) {
+          badge.className = "px-2 py-0.5 text-[8px] sm:text-[9px] uppercase font-bold tracking-wider rounded badge-luxury shadow-2xs";
+          badge.textContent = "Bankakte • Kreditprüfung";
+        }
+        if (footerLabel) {
+          footerLabel.textContent = "Bankdossier Wohnhaus + Betriebshof Beilstein • Käufer Norbert Zürn • Stand: September 2026";
+        }
+        if (navGrid) {
+          navGrid.className = "hidden lg:grid grid-cols-7 gap-2 py-2.5 text-left transition-all";
+        }
+      }
+
+      selectOfficialDocument(0);
+      selectOfficialPhoto(0);
+      resetToDefaultCalculatorValues();
+      applyWidescreenLayout();
+      navigateToPage('page-overview');
+    }
+
+    function sperreDossier() {
+      const overlay = document.getElementById("passwort-overlay");
+      const inhalt = document.getElementById("geschuetzter-inhalt");
+      const passInput = document.getElementById("passwort-input");
+      const fehler = document.getElementById("fehlermeldung");
+
+      currentAccessMode = null;
+      if (inhalt) inhalt.style.display = "none";
+      if (overlay) overlay.style.display = "flex";
+      if (passInput) {
+        passInput.value = "";
+        passInput.classList.remove("border-rose-500", "focus:border-rose-500", "focus:ring-rose-500");
+        passInput.focus();
+      }
+      if (fehler) fehler.classList.add("hidden");
+    }
+
+    const officialPdfDocuments = [
+      { index: 0, driveId: "1Hq58Q6ZugzSepMvBm6PywC-ijkDQH9fk", filename: "2026-08-24_01_250_Lageplan Bestand.pdf", title: "Dokument 1: Lageplan aktueller Bestand (M 1:250)", scale: "M 1:250" },
+      { index: 1, driveId: "1xRHJYCs_kiIcA4myxwgDWYJAw_9-TBC-", filename: "2026-08-24_01_500_Lageplan Bestand.pdf", title: "Dokument 2: Lageplan aktueller Bestand (M 1:500)", scale: "M 1:500" },
+      { index: 2, driveId: "1AnLtQv9ra6nEPBDfLxy36suy0RBXp0dJ", filename: "2026-08-24_02_500_Lageplan Bestand +Luftbild.pdf", title: "Dokument 3: Lageplan + Luftbild Bestand (M 1:500)", scale: "M 1:500" },
+      { index: 3, driveId: "1XdjSJjsx6Vqg27j3jipdlRfCYYvD3t-s", filename: "2026-08-24_03_250_Lageplan Umbau kurzfristig.pdf", title: "Dokument 4: Lageplan Umbau kurzfristig (M 1:250)", scale: "M 1:250" },
+      { index: 4, driveId: "1RlesFSnmwX3pVozrd76s5HlqfJkz-eiA", filename: "2026-08-24_04_250_Lageplan Umbau langfristig.pdf", title: "Dokument 5: Lageplan Umbau langfristig (M 1:250)", scale: "M 1:250" }
+    ];
+
+    let currentSelectedDoc = 0;
+
+    function selectOfficialDocument(index) {
+      currentSelectedDoc = index;
+      const doc = officialPdfDocuments[index];
+      if (!doc) return;
+
+      document.querySelectorAll('.pdf-tab-btn').forEach((btn, i) => {
+        if (i === index) {
+          btn.className = "pdf-tab-btn text-left p-3 sm:p-3.5 border-2 border-slate-900 bg-slate-900 text-white rounded-lg transition shadow-soft";
+        } else {
+          btn.className = "pdf-tab-btn text-left p-3 sm:p-3.5 border border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-900 rounded-lg transition";
+        }
+      });
+
+      const fnEl = document.getElementById('current-doc-filename');
+      if (fnEl) fnEl.textContent = doc.filename;
+
+      const titleEl = document.getElementById('pdf-title-display');
+      if (titleEl) titleEl.textContent = doc.title;
+
+      const scaleEl = document.getElementById('pdf-scale-tag');
+      if (scaleEl) scaleEl.textContent = "Maßstab: " + doc.scale;
+
+      const previewUrl = `https://drive.google.com/file/d/${doc.driveId}/preview`;
+      const slot = document.getElementById('pdf-embed-slot');
+      if (slot) {
+        slot.innerHTML = `<iframe src="${previewUrl}" class="w-full h-full rounded-lg bg-white shadow-2xs border border-slate-200" allow="autoplay"></iframe>`;
+      }
+    }
+
+    const officialPhotoDocuments = [
+      { index: 0, driveId: "1-YFs2czODrGKpASAyrQiUywlmkIhSpuH", title: "Baukörper 1: Zweifamilienhaus & Vorplatz (ca. 160 m² Wohnfläche)" },
+      { index: 1, driveId: "1lgcIeiBRzZ6bkXEVG_IkBMKJKSQ31DfX", title: "Baukörper 1: Frontansicht & Eingangsbereich Zweifamilienhaus" },
+      { index: 2, driveId: "1vqoQ2rs_eOZTSRdqdml_QiNd7g8WPzrX", title: "Baukörper 2: GaLaBau-Mehrzweckhalle & Wirtschaftsgebäude" },
+      { index: 3, driveId: "1jgV-oqoSi16-QsyOuBXJetJ8m1Pgv4o-", title: "Baukörper 2: Hallenlängsseite mit Schiebetoren (26,50 m)" },
+      { index: 4, driveId: "1t6WZN4Tihi0H9dA6USsp43Z8j6Kqefjj", title: "Baukörper 3: Werkstatt- & Carporttrakt (Westflügel)" },
+      { index: 5, driveId: "1VaS8u9Qzj9NLfc1oo3W-wXCtqEJ2VxM-", title: "Grundriss Erdgeschoss: Raumaufteilung & Wohnflächen (ca. 160 m²)" }
+    ];
+
+    function selectOfficialPhoto(index) {
+      const photo = officialPhotoDocuments[index];
+      if (!photo) return;
+
+      document.querySelectorAll('.photo-tab-btn').forEach((btn, i) => {
+        if (i === index) {
+          btn.className = "photo-tab-btn text-left p-3 border-2 border-slate-900 bg-slate-900 text-white rounded-lg transition shadow-soft";
+        } else {
+          btn.className = "photo-tab-btn text-left p-3 border border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-900 rounded-lg transition";
+        }
+      });
+
+      const frame = document.getElementById('google-drive-photo-frame');
+      if (frame) {
+        frame.src = `https://drive.google.com/file/d/${photo.driveId}/preview`;
+      }
+    }
+
+    function navigateToPage(pageId) {
+      document.querySelectorAll('.page-tab-content').forEach(p => {
+        p.classList.add('hidden');
+        p.classList.remove('block');
+      });
+      const target = document.getElementById(pageId);
+      if (target) {
+        target.classList.remove('hidden');
+        target.classList.add('block');
+      }
+
+      document.querySelectorAll('.nav-tab').forEach(btn => {
+        if (btn.id === 'nav-btn-page-familie') {
+          btn.className = "nav-tab family-only group flex-col justify-center p-2.5 rounded-lg border border-amber-300/80 bg-amber-50/70 text-slate-800 hover:border-amber-400 hover:bg-amber-100/60 transition shadow-2xs " + (currentAccessMode === 'family' ? 'flex' : 'hidden');
+        } else {
+          btn.classList.remove('bg-slate-900', 'text-white', 'border-slate-900', 'shadow-soft');
+          btn.classList.add('bg-white/80', 'text-slate-700', 'border-slate-200', 'hover:border-slate-400', 'hover:bg-slate-50');
+        }
+      });
+
+      const activeBtn = document.getElementById('nav-btn-' + pageId);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-white/80', 'text-slate-700', 'border-slate-200', 'hover:border-slate-400', 'hover:bg-slate-50', 'bg-amber-50/70', 'border-amber-300/80');
+        activeBtn.classList.add('bg-slate-900', 'text-white', 'border-slate-900', 'shadow-soft');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    const inLoan = document.getElementById('input-loan');
+    const inInterest = document.getElementById('input-interest');
+    const inRepay = document.getElementById('input-repayment');
+    const inRent = document.getElementById('input-rent');
+    const checkAutoSyncRent = document.getElementById('check-autosync-rent');
+
+    function resetToDefaultCalculatorValues() {
+      if (inLoan) inLoan.value = 390000;
+      if (inInterest) inInterest.value = 4.50;
+      if (inRepay) inRepay.value = 2.00;
+      if (inRent) inRent.value = 2438;
+      if (checkAutoSyncRent) checkAutoSyncRent.checked = true;
+      calculateMortgage(false);
+    }
+
+    function calculateMortgage(triggeredByRentSlider = false) {
+      if (!inLoan || !inInterest || !inRepay || !inRent) return;
+
+      const loan = parseFloat(inLoan.value);
+      const interestRate = parseFloat(inInterest.value);
+      const repayRate = parseFloat(inRepay.value);
+
+      const yearlyAnnuity = loan * ((interestRate + repayRate) / 100);
+      const monthlyRate = yearlyAnnuity / 12;
+      const roundedRate = Math.round(monthlyRate);
+
+      const monthlyZins = (loan * (interestRate / 100)) / 12;
+      const monthlyTilg = (loan * (repayRate / 100)) / 12;
+
+      let monthlyRent = parseFloat(inRent.value);
+
+      if (checkAutoSyncRent && checkAutoSyncRent.checked && !triggeredByRentSlider) {
+        const fullProjectCost = 450000;
+        const fullCostYearlyAnnuity = fullProjectCost * ((interestRate + repayRate) / 100);
+        monthlyRent = Math.round(fullCostYearlyAnnuity / 12);
+        inRent.value = monthlyRent;
+      }
+
+      const setTxt = (id, txt) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = txt;
+      };
+
+      setTxt('label-loan', loan.toLocaleString('de-DE') + ' €');
+      setTxt('label-interest', interestRate.toFixed(2).replace('.', ',') + ' %');
+      setTxt('label-repayment', repayRate.toFixed(2).replace('.', ',') + ' %');
+      setTxt('label-rent', Math.round(monthlyRent).toLocaleString('de-DE') + ' €');
+
+      const monthlyBuffer = monthlyRent - roundedRate;
+      const coverageRatio = monthlyRate > 0 ? (monthlyRent / monthlyRate) * 100 : 100;
+
+      setTxt('calc-monthly-rate', roundedRate.toLocaleString('de-DE') + ' €');
+      setTxt('calc-rate-breakdown', `Zins: ${Math.round(monthlyZins).toLocaleString('de-DE')} € | Tilg: ${Math.round(monthlyTilg).toLocaleString('de-DE')} €`);
+      setTxt('calc-monthly-rent', Math.round(monthlyRent).toLocaleString('de-DE') + ' €');
+      setTxt('calc-yearly-rent-display', Math.round(monthlyRent * 12).toLocaleString('de-DE') + ' € p.a. hochgerechnet');
+
+      const bufferEl = document.getElementById('calc-monthly-buffer');
+      if (bufferEl) {
+        bufferEl.textContent = (monthlyBuffer >= 0 ? '+ ' : '- ') + Math.abs(Math.round(monthlyBuffer)).toLocaleString('de-DE') + ' €';
+      }
+      setTxt('calc-coverage-ratio', `Deckung: ${coverageRatio.toFixed(1).replace('.', ',')} %`);
+      setTxt('table-rent-m', Math.round(monthlyRent).toLocaleString('de-DE') + ' €');
+      setTxt('table-rent-y', Math.round(monthlyRent * 12).toLocaleString('de-DE') + ' €');
+      setTxt('table-rate-m', roundedRate.toLocaleString('de-DE') + ' €');
+      setTxt('table-rate-y', Math.round(yearlyAnnuity).toLocaleString('de-DE') + ' €');
+      setTxt('table-buffer-m', (monthlyBuffer >= 0 ? '+ ' : '- ') + Math.abs(Math.round(monthlyBuffer)).toLocaleString('de-DE') + ' €');
+      setTxt('table-buffer-y', (monthlyBuffer >= 0 ? '+ ' : '- ') + Math.abs(Math.round(monthlyBuffer * 12)).toLocaleString('de-DE') + ' €');
+    }
+
+    [inLoan, inInterest, inRepay].forEach(input => {
+      if (input) input.addEventListener('input', () => calculateMortgage(false));
+    });
+
+    if (inRent) {
+      inRent.addEventListener('input', () => {
+        if (checkAutoSyncRent) checkAutoSyncRent.checked = false;
+        calculateMortgage(true);
+      });
+    }
+
+    if (checkAutoSyncRent) {
+      checkAutoSyncRent.addEventListener('change', () => calculateMortgage(false));
+    }
+
+    let isFullWidthMode = false;
+    function toggleWidescreenMode() {
+      isFullWidthMode = !isFullWidthMode;
+      applyWidescreenLayout();
+    }
+
+    function applyWidescreenLayout() {
+      const headerBox = document.getElementById('header-container');
+      const mainBox = document.getElementById('main-container');
+      const footerBox = document.getElementById('footer-container');
+      const btnText = document.getElementById('widescreen-btn-text');
+
+      if (isFullWidthMode) {
+        if (headerBox) headerBox.className = "w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 transition-all duration-300";
+        if (mainBox) mainBox.className = "flex-grow w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-6 sm:py-9 lg:py-12 transition-all duration-300";
+        if (footerBox) footerBox.className = "w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 flex flex-col sm:flex-row justify-between items-center gap-3 font-mono text-center sm:text-left transition-all duration-300";
+        if (btnText) btnText.textContent = "Kompakt";
+      } else {
+        if (headerBox) headerBox.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300";
+        if (mainBox) mainBox.className = "flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-9 lg:py-12 transition-all duration-300";
+        if (footerBox) footerBox.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3 font-mono text-center sm:text-left transition-all duration-300";
+        if (btnText) btnText.textContent = "Vollbreite";
+      }
+    }
+
+    function setMapMode(mode) {
+      const iframe = document.getElementById('google-maps-iframe');
+      if (!iframe) return;
+      const baseAddress = "Helfenberger%20Str.%2028,%2071717%20Beilstein-S%C3%B6hlbach";
+      iframe.src = mode === 'satellite' 
+        ? `https://maps.google.com/maps?q=${baseAddress}&t=k&z=17&ie=UTF8&iwloc=&output=embed`
+        : `https://maps.google.com/maps?q=${baseAddress}&t=m&z=16&ie=UTF8&iwloc=&output=embed`;
+    }
+
+    const passwortInputElement = document.getElementById("passwort-input");
+    if (passwortInputElement) {
+      passwortInputElement.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") pruefePasswort();
+      });
+      window.addEventListener("DOMContentLoaded", () => passwortInputElement.focus());
+    }
+  </script>
+</body>
+</html>
